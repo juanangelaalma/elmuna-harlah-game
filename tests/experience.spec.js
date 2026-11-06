@@ -1,5 +1,32 @@
 import { test, expect } from "@playwright/test";
 
+test("mobile reveals cards individually and respects motion preference changes", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/");
+  const cards = page.locator(".event-card");
+  await expect(cards.nth(0)).toHaveCSS("opacity", "0");
+  await cards.nth(0).scrollIntoViewIfNeeded();
+  await expect(cards.nth(0)).toHaveCSS("opacity", "1");
+  await expect(cards.nth(2)).toHaveCSS("opacity", "0");
+  await cards.nth(0).click();
+  await expect(page.locator("#event-dialog h2")).toHaveText("Dialog Interaktif");
+  await page.keyboard.press("Escape");
+
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  for (const card of await cards.all()) await expect(card).toHaveCSS("opacity", "1");
+  const date = page.locator(".date-banner strong");
+  await expect(date).toHaveCSS("opacity", "1");
+  await expect(date).toHaveCSS("clip-path", "none");
+
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  await date.scrollIntoViewIfNeeded();
+  await expect(date).toHaveCSS("opacity", "1");
+  await expect(date).toHaveCSS("clip-path", "none");
+  await page.locator(".hero").scrollIntoViewIfNeeded();
+  await date.scrollIntoViewIfNeeded();
+  await expect(date).toHaveCSS("opacity", "1");
+});
+
 test("hero posters cycle through both upcoming events and honor reduced motion", async ({ page }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/");

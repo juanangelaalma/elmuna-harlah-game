@@ -14,6 +14,7 @@ import {
 } from "lucide";
 import { initHero } from "./world.js";
 import { initGame } from "./game.js";
+import { initMotion } from "./motion.js";
 
 export function refreshIcons() {
   createIcons({
@@ -333,3 +334,4 @@ function updateCountdown() {
 }
 updateCountdown();
 setInterval(updateCountdown, 1000);
+initMotion();

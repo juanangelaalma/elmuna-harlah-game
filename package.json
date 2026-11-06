@@ -13,6 +13,7 @@
     "@fontsource-variable/dm-sans": "^5.3.0",
     "@fontsource-variable/space-grotesk": "^5.3.0",
     "@fontsource/lora": "^5.3.0",
+    "gsap": "^3.15.1",
     "lucide": "^0.468.0",
     "three": "^0.180.0"
   },

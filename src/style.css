@@ -189,7 +189,10 @@ a svg {
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
 }
-.hero h1 > span {
+.hero-line {
+  display: block;
+}
+.hero h1 .hero-generations {
   display: block;
   white-space: nowrap;
   font-size: 0.91em;
@@ -613,6 +616,9 @@ h2 {
 .event-card:hover {
   transform: translateY(-7px);
   box-shadow: 0 10px 0 #20231e12;
+}
+.event-card.is-revealing {
+  transition: none;
 }
 .talk {
   background: #e3f3fb;
@@ -1455,7 +1461,7 @@ dialog::backdrop {
     letter-spacing: -4px;
     margin-top: 24px;
   }
-  .hero h1 > span {
+  .hero h1 .hero-generations {
     width: max-content;
   }
   .hero-copy > p {

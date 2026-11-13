@@ -58,29 +58,24 @@
             ><span>Satu warisan. Banyak generasi. Terus menguatkan.</span>
           </div>
         </div>
-        <div class="hero-posters" role="region" aria-roledescription="karusel" aria-label="Poster tiga acara">
-          <div class="edition">TIGA ACARA <span>↗</span> SATU SEMANGAT</div>
-          <div class="poster-stack">
-            <div class="swap-card" data-position="0">
-              <img src="/images/dialog-interaktif-poster.png" alt="Poster unggulan Dialog Interaktif" width="1200" height="1500" draggable="false" />
-            </div>
-            <div class="swap-card poster-placeholder sport" data-position="1">
-              <span class="placeholder-top">ROAD TO 43 <span>02 / SPORT</span></span>
-              <span class="placeholder-symbol" aria-hidden="true">✳</span>
-              <strong>Turnamen<br />Bulu Tangkis</strong>
-              <span class="placeholder-note">POSTER SEGERA HADIR ↗</span>
-            </div>
-            <div class="swap-card poster-placeholder creative" data-position="2">
-              <span class="placeholder-top">ROAD TO 43 <span>03 / KREASI</span></span>
-              <span class="placeholder-symbol" aria-hidden="true">✷</span>
-              <strong>Lomba<br />Video Kreatif</strong>
-              <span class="placeholder-note">POSTER SEGERA HADIR ↗</span>
+        <div class="festival" role="region" aria-label="Pulau festival Road to 43">
+          <div class="festival-heading"><span>ROAD TO 43</span><strong>Satu pulau. Banyak cerita.</strong></div>
+          <div class="festival-scene">
+            <canvas id="hero-canvas" aria-label="Diorama pulau festival. Geser horizontal untuk memutar, atau gunakan tombol putar." aria-describedby="festival-help"></canvas>
+            <div class="festival-hotspots">
+              <button class="festival-hotspot" data-event="0"><span>01</span> Dialog Interaktif</button>
+              <button class="festival-hotspot" data-event="1"><span>02</span> Bulu Tangkis</button>
+              <button class="festival-hotspot" data-event="2"><span>03</span> Video Kreatif</button>
+              <button class="festival-hotspot festival-portal" data-start>Masuk portal 43 <span>↗</span></button>
             </div>
           </div>
-          <div class="poster-controls">
-            <span id="poster-status" aria-live="polite">01 / Dialog Interaktif</span>
-            <button type="button" id="poster-pause" aria-label="Jeda pergantian poster" aria-pressed="false">Ⅱ</button>
-            <button type="button" id="poster-next" aria-label="Poster berikutnya">↗</button>
+          <div class="festival-controls">
+            <p id="festival-help" role="status">Menyiapkan pulau festival…</p>
+            <div>
+              <button type="button" id="island-left" aria-label="Putar pulau ke kiri">←</button>
+              <button type="button" id="island-reset" aria-label="Kembalikan sudut awal pulau">↺</button>
+              <button type="button" id="island-right" aria-label="Putar pulau ke kanan">→</button>
+            </div>
           </div>
         </div>
         <div class="hero-bottom">
@@ -189,19 +184,30 @@
 
       <section class="play-section" id="play">
         <div class="wrap play-inner">
-          <div class="hero-world">
-            <div class="edition">SEJAK 1983 <span>↗</span> TERUS MELANGKAH</div>
-            <canvas
-              id="hero-canvas"
-              aria-label="Angka 43 emas interaktif melayang di panggung biru muda"
-            ></canvas>
-            <div class="world-sticker">
-              <span>43 TAHUN</span><b>berbagi<br />kebaikan.</b><span>TERUS BERLANJUT ↗</span>
+          <div class="hero-posters" role="region" aria-roledescription="karusel" aria-label="Poster tiga acara">
+            <div class="edition">TIGA ACARA <span>↗</span> SATU SEMANGAT</div>
+            <div class="poster-stack">
+              <div class="swap-card" data-position="0">
+                <img src="/images/dialog-interaktif-poster.png" alt="Poster unggulan Dialog Interaktif" width="1200" height="1500" draggable="false" />
+              </div>
+              <div class="swap-card poster-placeholder sport" data-position="1">
+                <span class="placeholder-top">ROAD TO 43 <span>02 / SPORT</span></span>
+                <span class="placeholder-symbol" aria-hidden="true">✳</span>
+                <strong>Turnamen<br />Bulu Tangkis</strong>
+                <span class="placeholder-note">POSTER SEGERA HADIR ↗</span>
+              </div>
+              <div class="swap-card poster-placeholder creative" data-position="2">
+                <span class="placeholder-top">ROAD TO 43 <span>03 / KREASI</span></span>
+                <span class="placeholder-symbol" aria-hidden="true">✷</span>
+                <strong>Lomba<br />Video Kreatif</strong>
+                <span class="placeholder-note">POSTER SEGERA HADIR ↗</span>
+              </div>
             </div>
-            <div class="world-label">
-              <span class="tiny-dot"></span> BABAK BARU SEGERA DIMULAI…
+            <div class="poster-controls">
+              <span id="poster-status" aria-live="polite">01 / Dialog Interaktif</span>
+              <button type="button" id="poster-pause" aria-label="Jeda pergantian poster" aria-pressed="false">Ⅱ</button>
+              <button type="button" id="poster-next" aria-label="Poster berikutnya">↗</button>
             </div>
-            <span class="drag-note"><i data-lucide="move-up-right"></i> geser kursor. rasakan semangatnya.</span>
           </div>
           <div class="play-copy">
             <div class="eyebrow">02 / JANGAN CUMA GULIR. AYO BERGULIR.</div>

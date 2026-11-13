@@ -30,8 +30,7 @@ test("mobile reveals cards individually and respects motion preference changes",
 test("hero posters cycle through both upcoming events and honor reduced motion", async ({ page }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/");
-  await expect(page.locator("#play #hero-canvas")).toBeVisible();
-  await expect(page.locator(".hero canvas")).toHaveCount(0);
+  await expect(page.locator(".hero #hero-canvas")).toBeVisible();
   const poster = page.getByRole("img", { name: "Poster unggulan Dialog Interaktif" });
   await expect.poll(() => poster.evaluate((image) => image.naturalWidth)).toBe(1200);
   const front = page.locator('.swap-card[data-position="0"]');
@@ -63,7 +62,9 @@ test("posters follow a drag, snap back on short drags, and swap on swipe or tap"
   await page.mouse.move(x + 25, y, { steps: 5 });
   await page.mouse.up();
   await expect(status).toContainText("Dialog Interaktif");
-  await page.waitForTimeout(300);
+  await page.locator('.swap-card[data-position="0"]').evaluate(async (card) => {
+    await Promise.all(card.getAnimations().map((animation) => animation.finished));
+  });
   await page.mouse.move(x, y);
   await page.mouse.down();
   await page.mouse.move(x - 110, y, { steps: 8 });

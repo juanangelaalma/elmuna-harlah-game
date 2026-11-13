@@ -38,16 +38,6 @@ export function initMotion() {
         0.6,
       );
 
-      // Keep controls stationary and leave individual carousel transforms untouched.
-      gsap.from(".poster-stack", {
-        ...defaults,
-        ...enter,
-        rotation: mobile ? -2 : -4,
-        scale: 0.97,
-        ease: "back.out(1.15)",
-        scrollTrigger: trigger(".hero-posters"),
-      });
-
       gsap.from(".events .section-heading > *", {
         ...defaults,
         ...enter,

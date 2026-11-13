@@ -12,7 +12,7 @@ import {
   VolumeX,
   Volume2,
 } from "lucide";
-import { initHero } from "./world.js";
+import { initFestival } from "./festival.js";
 import { initGame } from "./game.js";
 import { initMotion } from "./motion.js";
 
@@ -33,7 +33,7 @@ export function refreshIcons() {
   });
 }
 refreshIcons();
-initHero();
+initFestival();
 
 const dialogCard = document.querySelector(".event-card.talk");
 const posterArt = dialogCard.querySelector(".talk-art");

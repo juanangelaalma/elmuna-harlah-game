@@ -13,6 +13,16 @@ npm run dev
 
 Vite listens on port 5173 and all network interfaces. `npm run build` creates a static production site in `dist/`; `npm run preview` serves that build.
 
+## Festival island
+
+The hero is a procedural Three.js festival diorama. Drag horizontally or use the
+left, reset, and right buttons to change the view. Select the dialogue stage,
+badminton court, or video studio (or their keyboard-accessible labels) to open
+the existing event details. The gold 43 portal opens Marble Rush. Vertical touch
+scrolling remains available; there is no automatic island motion. Without WebGL,
+the same event and game buttons remain accessible with an explanatory message.
+The poster carousel is now in the play section.
+
 ## Marble Rush
 
 - Steer with **← / →** or **A / D**; jump with **Space / ↑ / W**.

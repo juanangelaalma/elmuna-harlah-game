@@ -23,6 +23,15 @@ scrolling remains available; there is no automatic island motion. Without WebGL,
 the same event and game buttons remain accessible with an explanatory message.
 The poster carousel is now in the play section.
 
+## Timeline
+
+Open `/timeline.html` from the main navigation for the four-event schedule from
+November 21 to December 20, 2026. The page uses the existing design tokens and a
+procedural Three.js route. Four numbered buttons highlight the matching landmark;
+the scene renders only on selection or resize, with no autoplay. All event dates
+and descriptions remain available without JavaScript or WebGL. The production
+build includes both the landing page and timeline.
+
 ## Marble Rush
 
 - Steer with **← / →** or **A / D**; jump with **Space / ↑ / W**.
@@ -44,6 +53,6 @@ Tests cover event discovery without gameplay, calendar dates, a complete three-w
 
 ## Event information
 
-The grand celebration is **December 20, 2026**. Other event dates, venue, speakers, tournament rules, submission requirements, and registration links are deliberately not fabricated. Add confirmed information to the event records in `src/main.js` before launch. No backend or registration service is connected.
+The confirmed schedule is **November 21, 2026** (Dialog interaktif), **November 21–December 13, 2026** (Lomba Creative Video; concept and rules still being planned), **December 13, 2026** (Lomba Badminton at GOR Botoran, Tulungagung), and **December 20, 2026** (Puncak Harlah ke-43, with a public religious gathering at Masjid Agung Al Munawwar Tulungagung). The full schedule lives in `timeline.html`. No backend or registration service is connected.
 
 The site is self-contained: fonts are bundled locally and all 3D objects are procedural. WebGL2 is required for the interactive scenes; event information remains accessible without it. Reduced-motion preferences disable ambient page animations.

@@ -32,6 +32,55 @@ the scene renders only on selection or resize, with no autoplay. All event dates
 and descriptions remain available without JavaScript or WebGL. The production
 build includes both the landing page and timeline.
 
+## A4 heritage page
+
+Open `/warisan.html` through the homepage footer or the timeline's “Makna Harlah
+ke-43” link. It presents the anniversary message on a 210 × 297 mm portrait sheet.
+“Cetak A4” opens the browser print dialog; print CSS removes the toolbar and page
+shadow and requests A4 with zero page margins. On narrow screens the content
+reflows for reading. The decorative Three.js sculpture renders only on resize
+and before printing, with linked CSS rings when WebGL is unavailable. All text
+and the fallback illustration are available without JavaScript.
+
+## Sponsorship proposal
+
+Open `/proposal.html` using “Proposal” on the heritage page. It now contains
+**23 A4 portrait sheets**: 14 concise editorial chapters and nine appendices
+preserving the full text, event facts, budget, sponsorship matrix, and conditions
+from `Proposal_Sponsorship_Harlah_43 (1).md`. Links in the main chapters jump to
+the corresponding full appendix.
+
+Every sheet has a relevant Three.js illustration. Twelve procedural sculptures
+are rendered once each using a single temporary WebGL context; appendix pages
+reuse the high-resolution PNGs. GPU resources are released after rendering.
+All images remain available in print, with local decorative fallback
+illustrations when WebGL is unavailable. There is no animation loop.
+
+Use the seven image upload areas to add photos or posters. Images are included
+in printing and remembered in IndexedDB on the same browser/origin. “Hapus”
+restores the original image or empty area. Images are not uploaded to a server.
+If local storage is unavailable, images remain usable for the current visit and
+the status message explains this. Existing saved images retain their upload keys.
+
+“Cetak 23 halaman A4” waits for the illustrations, images, and fonts before opening
+the print dialog. Choose A4, 100% scale, no margins, and disable browser
+headers/footers. Print styles hide editing controls. Missing event, archive, and
+contact information remains explicitly marked as in the source proposal.
+
+### Editorial preview
+
+`/proposal-preview.html` contains three A4 design samples: cover, Dialog
+Interaktif, and a six-package sponsorship overview. It uses the same rendering,
+image storage, and print implementation as the complete editorial proposal,
+including the same saved dialogue poster. Its detail links point to the complete
+proposal's appendices.
+
+Each sample has a distinct Three.js sculpture. One temporary WebGL renderer
+creates three high-resolution PNGs, then releases GPU resources; these images
+remain visible in print without depending on live WebGL contexts. Local fallback
+illustrations are shown when WebGL is unavailable. Use “Cetak 3 halaman A4” to
+print the samples, not the complete proposal.
+
 ## Marble Rush
 
 - Steer with **← / →** or **A / D**; jump with **Space / ↑ / W**.

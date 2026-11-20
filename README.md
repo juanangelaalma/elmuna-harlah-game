@@ -32,6 +32,45 @@ the scene renders only on selection or resize, with no autoplay. All event dates
 and descriptions remain available without JavaScript or WebGL. The production
 build includes both the landing page and timeline.
 
+## El Muna Fun Cup poster
+
+Open `/fun-cup.html` for the “Blue Smash” one-page A4 portrait badminton
+poster: a full-blue background, rising diagonal headline, layered court lines,
+outline anniversary watermark, motion trails, and translucent shadows.
+Two procedural Three.js rackets in sky/gold and a foreground shuttle provide
+depth and contrast. The artwork is rendered once as a 2160 × 1080 transparent
+image, then GPU resources are released. Gentle CSS motion can be paused and
+respects reduced motion; printing always uses the static image. An inline
+illustration remains available without WebGL or JavaScript. On narrow screens,
+event details reflow while retaining the diagonal visual direction.
+
+Enter an HTTP(S) registration URL and choose “Terapkan link” to update the
+poster's clickable registration link and printable address. The URL is saved
+only in this browser/origin; it does not update a shared registration service.
+Apply an empty field to remove it. Without a URL, the poster says registration
+will be announced rather than linking to a placeholder.
+
+“Download PDF” waits for the artwork and fonts, then opens the browser print
+dialog, like the proposal. Select Save as PDF, A4 portrait, 100% scale, no
+margins, background graphics enabled, and browser headers/footers disabled.
+The toolbar is omitted from the single-page output. Without JavaScript, use
+the browser's Print command.
+
+## MC cue cards
+
+Open `/qcard.html` from the homepage navigation for a physical MC cue card design.
+The blue anniversary front and ruled note back each measure 148 × 105 mm (A6
+landscape). The front pairs editorial typography with an extruded gold “43”,
+a sky orbit, and a white star built in Three.js. One temporary WebGL renderer
+creates a 1600 × 1600 transparent PNG and releases GPU resources; there is no
+animation loop. A CSS emblem stays visible without JavaScript or WebGL.
+“Cetak kartu” waits for the emblem, image decode, and fonts before opening the
+browser print dialog. Both faces fit on one A4 portrait sheet with cutting
+outlines. Use 100% scale, enable background graphics, and disable browser
+headers/footers. Cut the two faces and glue them back-to-back; this layout is not
+automatic duplex printing. The back stays blank for handwritten rundown notes,
+with six ruled lines. Browser printing also works without JavaScript.
+
 ## A4 heritage page
 
 Open `/warisan.html` through the homepage footer or the timeline's “Makna Harlah

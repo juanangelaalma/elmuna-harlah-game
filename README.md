@@ -90,20 +90,41 @@ and the fallback illustration are available without JavaScript.
 ## Sponsorship proposal
 
 Open `/proposal.html` using “Proposal” on the heritage page. It contains
-**22 A4 portrait sheets**: 14 editorial chapters and 8 appendices. Event details
+**23 A4 portrait sheets**: 14 editorial chapters, an approval sheet, and 8 appendices. Event details
 and partnership terms reflect the latest supplied material; the original
 `Proposal_Sponsorship_Harlah_43 (1).md` is historical source material, not the
 current sponsorship contract. Chapter links jump to the remaining corresponding
 appendices; event details are presented directly in chapters 5–8.
+The cover uses the supplied transparent `/road-to-43-branding.png` directly on
+the white sheet, without an added background.
 
 Page 11 summarizes six support categories and distinguishes the Rp28,829,000 RAB,
-Rp2,480,000 planned income, and Rp26,349,000 funding gap. Pages 17–20 contain the
+Rp2,480,000 planned income from the mosque youth organization's cash fund,
+and Rp26,349,000 funding gap. Pages 18–21 contain the
 premium benefit matrix, Sahabat Harlah matrix and Donatur category, in-kind and
 event-specific support, and partnership conditions. In-kind contributions use
 the highest qualifying package threshold; equipment loans use rental/service
 value, not purchase price. Sponsor Tunggal requires a separate exclusivity
 agreement. The two benefit matrices remain separate and horizontally scrollable
 on narrow screens, with all columns visible in A4 print.
+
+Content follow-up:
+- [x] Updated the Instagram handle embedded in the dialog and El Muna Fun Cup
+  posters (pages 5–6) to `remas_elmuna.ta` using the supplied replacement posters.
+
+Pages 12–13 present Harlah 41 (2024) and Harlah 42 (2025), with event summaries,
+dates, venues, and themes transcribed from the supplied reference posters.
+The posters themselves are not embedded. Locally generated QR PNGs and clickable
+links point to the supplied Instagram reel/post without tracking parameters;
+QRs include four-module quiet zones for print scanning.
+The Harlah 42 archive covers both the 27 December 2025 Festival Banjari and
+the 28 December 2025, 19:00 WIB closing pengajian with Ust. Dr. H. Soim Alkassi,
+M.Pd.I., accompanied by Hadroh El Muna Tulungagung.
+
+Page 15 is the approval sheet dated 13 November 2026, placed after contact details
+and before the appendices. It has two signature rows: the event chair and secretary,
+then the mosque board chair and youth organization chair under “Mengetahui”.
+The signature areas are intentionally blank for handwritten signatures.
 
 Editorial chapters use relevant Three.js illustrations. Twelve procedural
 sculptures are rendered once each using a single temporary WebGL context; related
@@ -112,16 +133,49 @@ readable tables and copy. GPU resources are released after rendering. Images
 remain available in print, with local fallback illustrations when WebGL is
 unavailable. There is no animation loop.
 
-Use the seven image upload areas to add photos or posters. Images are included
+Use the five image upload areas to add photos or posters. Images are included
 in printing and remembered in IndexedDB on the same browser/origin. “Hapus”
 restores the original image or empty area. Images are not uploaded to a server.
 If local storage is unavailable, images remain usable for the current visit and
 the status message explains this. Existing saved images retain their upload keys.
 
-“Cetak 22 halaman A4” waits for the illustrations, images, and fonts before opening
+“Cetak 23 halaman A4” waits for the illustrations, images, and fonts before opening
 the print dialog. Choose A4, 100% scale, no margins, and disable browser
-headers/footers. Print styles hide editing controls. Missing archive and contact
-information remains explicitly marked.
+headers/footers. Print styles hide editing controls. The optional group photo
+on page 2 remains available for upload.
+
+“Unduh Word (.docx)” creates a local download named
+`Proposal-Sahabat-Harlah-43.docx`. The Word generator is loaded only when requested;
+opening the proposal or printing does not load the DOCX library. Export waits for
+saved-image restoration, pending uploads, image decoding, and fonts, then captures
+the current proposal including uploaded images. Print and image-editing controls
+are temporarily disabled during export and restored afterward, including on failure.
+No proposal content or images are sent to a server.
+
+The Word file preserves editable paragraphs and native tables rather than
+screenshots of pages, with embedded artwork and images. It uses Arial and Georgia
+italic for stable, widely available typography, fixed A4 sections, and bounded
+images/table widths. The downloaded document was rendered in LibreOffice 25.2:
+23 A4 pages, all benefit-table rows preserved, and both archive QR codes readable.
+Line wrapping and spacing can still vary between Word applications or after edits;
+use print/PDF when exact browser appearance is required.
+
+### Sponsorship agreement
+
+Open `/perjanjian-sponsorship.html` through “Surat perjanjian” in the proposal
+toolbar. It is a separate two-page A4 agreement without an agreement-number field,
+leaving the proposal at 23 pages. Page 1 covers identity and support category;
+page 2 covers contributions, concise terms, validity, and signatures. Print it and fill it in by hand; fields and printed
+checkboxes are intentionally not interactive browser controls.
+
+The agreement uses the six current categories, cash/in-kind valuation rules,
+official event names, and the supplied BRI account. Record the exact contribution,
+handover deadline, selected proposal version/pages, any benefit adjustments, and
+exclusive rights before signing. Attach the agreed benefit details, give each
+party an identical copy, and initial the first sheet.
+
+“Cetak 2 halaman A4” waits for local fonts before opening the browser print dialog.
+Use the same A4, no-margin, 100%-scale settings as the proposal.
 
 ### Editorial preview
 

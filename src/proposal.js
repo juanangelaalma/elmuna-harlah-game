@@ -2,13 +2,16 @@ import "./style.css";
 import "./proposal.css";
 
 const printButton = document.querySelector("#print-proposal");
+const wordButton = document.querySelector("#download-proposal-word");
 const status = document.querySelector("#proposal-status");
 const localNotice = "Gambar hanya disimpan di peramban perangkat ini, tidak dikirim ke server.";
 const events = new AbortController();
 const pending = new Set();
 const objectURLs = new Set();
+const downloadTimers = new Set();
 const slots = [];
 let preparingPrint = false;
+let preparingWord = false;
 let disposed = false;
 let database;
 let databasePromise;
@@ -18,10 +21,12 @@ function announce(message) {
 }
 
 function updateControls() {
-  if (printButton) printButton.disabled = preparingPrint || pending.size > 0;
+  const busy = preparingPrint || preparingWord;
+  if (printButton) printButton.disabled = busy || pending.size > 0;
+  if (wordButton) wordButton.disabled = busy || pending.size > 0;
   for (const slot of slots) {
-    slot.input.disabled = preparingPrint;
-    if (slot.remove) slot.remove.disabled = preparingPrint;
+    slot.input.disabled = busy;
+    if (slot.remove) slot.remove.disabled = busy;
   }
 }
 
@@ -190,6 +195,7 @@ for (const element of document.querySelectorAll("[data-upload]")) {
   input.addEventListener("change", () => {
     const file = input.files?.[0];
     input.value = "";
+    if (preparingPrint || preparingWord || disposed) return;
     if (!file) return;
     const revision = ++slot.revision;
     announce("Menyiapkan gambar sebelum dicetak…");
@@ -210,6 +216,7 @@ for (const element of document.querySelectorAll("[data-upload]")) {
     })());
   }, { signal: events.signal });
   slot.remove?.addEventListener("click", () => {
+    if (preparingPrint || preparingWord || disposed) return;
     const revision = ++slot.revision;
     restoreDefault(slot);
     track(persist(slot, "delete", undefined, revision));
@@ -227,10 +234,12 @@ for (const element of document.querySelectorAll("[data-upload]")) {
   })());
 }
 
-announce("Unggah gambar pada tempat yang disediakan, lalu cetak atau simpan sebagai PDF.");
+announce(wordButton
+  ? "Unggah gambar, lalu cetak, simpan sebagai PDF, atau unduh Word dengan teks dan tabel yang dapat diedit. Tata letak Word dapat berbeda."
+  : "Unggah gambar pada tempat yang disediakan, lalu cetak atau simpan sebagai PDF.");
 
 async function printProposal() {
-  if (preparingPrint || disposed) return;
+  if (preparingPrint || preparingWord || disposed) return;
   preparingPrint = true;
   updateControls();
   announce("Menyiapkan font dan gambar untuk pencetakan…");
@@ -251,13 +260,76 @@ async function printProposal() {
   }
 }
 
+async function downloadProposalWord() {
+  if (preparingPrint || preparingWord || disposed) return;
+  preparingWord = true;
+  wordButton?.setAttribute("aria-busy", "true");
+  updateControls();
+  announce("Menyiapkan Word dengan teks dan tabel yang dapat diedit; tata letaknya dapat berbeda dari PDF…");
+  try {
+    while (pending.size) await Promise.all([...pending]);
+    if (document.fonts) await document.fonts.ready;
+    const main = document.querySelector("main");
+    if (!main) throw new Error("Isi proposal tidak ditemukan.");
+    const images = [...main.querySelectorAll("img")];
+    await Promise.all(images
+      .filter(image => !image.hidden && (image.currentSrc || image.getAttribute("src") || image.getAttribute("srcset")))
+      .map(readyImage));
+    if (disposed) return;
+    const snapshot = main.cloneNode(true);
+    const snapshotImages = [...snapshot.querySelectorAll("img")];
+    images.forEach((image, index) => {
+      if (image.currentSrc || image.getAttribute("src")) {
+        snapshotImages[index].src = image.currentSrc || image.src;
+        snapshotImages[index].removeAttribute("srcset");
+        snapshotImages[index].removeAttribute("sizes");
+      }
+    });
+    const { createProposalWord } = await import("./proposal-word.js");
+    if (disposed) return;
+    const result = await createProposalWord(snapshot);
+    if (disposed) return;
+    const blob = new Blob([result], {
+      type: "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    });
+    const url = URL.createObjectURL(blob);
+    objectURLs.add(url);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "Proposal-Sahabat-Harlah-43.docx";
+    link.hidden = true;
+    document.body.append(link);
+    try {
+      link.click();
+    } finally {
+      link.remove();
+      // Keep the URL alive while the browser captures the download.
+      const timer = window.setTimeout(() => {
+        releaseURL(url);
+        downloadTimers.delete(timer);
+      }, 60_000);
+      downloadTimers.add(timer);
+    }
+    announce("Unduhan Word dimulai. Teks dan tabel dapat diedit; tata letak dan font dapat berbeda antar aplikasi Word. Periksa hasil sebelum dibagikan.");
+  } catch {
+    announce("Word belum dapat diunduh. Pastikan gambar dan font berhasil dimuat, lalu coba lagi. Ganti atau hapus gambar bermasalah bila perlu.");
+  } finally {
+    preparingWord = false;
+    wordButton?.removeAttribute("aria-busy");
+    updateControls();
+  }
+}
+
 printButton?.addEventListener("click", () => { void printProposal(); }, { signal: events.signal });
+wordButton?.addEventListener("click", () => { void downloadProposalWord(); }, { signal: events.signal });
 window.addEventListener("pagehide", (event) => {
   // A BFCache snapshot keeps its listeners and image URLs for pageshow.
   if (event.persisted) return;
   disposed = true;
   events.abort();
   database?.close();
+  for (const timer of downloadTimers) window.clearTimeout(timer);
+  downloadTimers.clear();
   for (const url of objectURLs) URL.revokeObjectURL(url);
   objectURLs.clear();
 }, { signal: events.signal });

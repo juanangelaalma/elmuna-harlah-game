@@ -90,13 +90,14 @@ and the fallback illustration are available without JavaScript.
 ## Sponsorship proposal
 
 Open `/proposal.html` using “Proposal” on the heritage page. It contains
-**25 A4 portrait sheets**: 14 editorial chapters and 11 appendices. Event details
+**22 A4 portrait sheets**: 14 editorial chapters and 8 appendices. Event details
 and partnership terms reflect the latest supplied material; the original
 `Proposal_Sponsorship_Harlah_43 (1).md` is historical source material, not the
-current sponsorship contract. Chapter links jump to the corresponding appendix.
+current sponsorship contract. Chapter links jump to the remaining corresponding
+appendices; event details are presented directly in chapters 5–8.
 
 Page 11 summarizes six support categories and distinguishes the Rp28,829,000 RAB,
-Rp2,480,000 planned income, and Rp26,349,000 funding gap. Pages 20–23 contain the
+Rp2,480,000 planned income, and Rp26,349,000 funding gap. Pages 17–20 contain the
 premium benefit matrix, Sahabat Harlah matrix and Donatur category, in-kind and
 event-specific support, and partnership conditions. In-kind contributions use
 the highest qualifying package threshold; equipment loans use rental/service
@@ -117,7 +118,7 @@ restores the original image or empty area. Images are not uploaded to a server.
 If local storage is unavailable, images remain usable for the current visit and
 the status message explains this. Existing saved images retain their upload keys.
 
-“Cetak 25 halaman A4” waits for the illustrations, images, and fonts before opening
+“Cetak 22 halaman A4” waits for the illustrations, images, and fonts before opening
 the print dialog. Choose A4, 100% scale, no margins, and disable browser
 headers/footers. Print styles hide editing controls. Missing archive and contact
 information remains explicitly marked.

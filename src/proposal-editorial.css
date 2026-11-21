@@ -213,64 +213,6 @@
   border-radius: 5px;
   padding-inline: 14px;
 }
-.editorial-sport .full-title {
-  font-size: 57px;
-}
-.editorial-sport .full-image {
-  height: 215px;
-}
-.editorial-sport .full-hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  min-height: 220px;
-  align-items: center;
-}
-.editorial-sport .full-hero .full-scene {
-  height: 220px;
-}
-.editorial-sport .full-hero > .full-copy {
-  margin: 0;
-  max-width: none;
-}
-.editorial-sport .full-stat strong {
-  font-size: 34px;
-}
-.editorial-sport .full-stats {
-  gap: 18px;
-  padding-block: 18px;
-}
-.editorial-sport .full-copy {
-  font-size: 13px;
-  line-height: 1.7;
-}
-.editorial-video .full-image {
-  height: 190px;
-}
-.editorial-video .full-scene {
-  height: 210px;
-}
-.editorial-video .full-title {
-  font-size: 60px;
-}
-.editorial-video .full-gold {
-  font-size: 13px;
-}
-.editorial-finale .full-title {
-  font-size: 60px;
-}
-.editorial-finale .full-image {
-  height: 220px;
-}
-.editorial-finale .full-scene {
-  height: 230px;
-}
-.editorial-finale .full-hero {
-  min-height: 230px;
-}
-.editorial-finale .full-stat strong {
-  font-size: 36px;
-}
 .full-costs {
   display: flex;
   flex-direction: column;
@@ -311,7 +253,7 @@
   line-height: 1.8;
 }
 .editorial-budget .full-scene {
-  height: 220px;
+  height: 160px;
 }
 .editorial-budget .full-title {
   font-size: 52px;
@@ -546,9 +488,6 @@
   .editorial-full .full-title,
   .editorial-intro .full-title,
   .editorial-theme .full-title,
-  .editorial-sport .full-title,
-  .editorial-video .full-title,
-  .editorial-finale .full-title,
   .editorial-invitation .full-title,
   .editorial-contact .full-title {
     font-size: clamp(35px, 6.9vw, 60px);
@@ -927,4 +866,148 @@
     var(--sky) 10px 14px
   );
   transform: translate(17px, -5px) rotate(10deg);
+}
+.partnership-overview .packages-hero {
+  height: 180px;
+}
+.partnership-overview .packages-hero h2 {
+  font-size: 46px;
+}
+.partnership-overview .packages-sculpture {
+  top: 10px;
+  width: 230px;
+  height: 180px;
+}
+.partnership-funding {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin: 0;
+  padding-block: 18px;
+  border-block: 1px solid #d7dfe7;
+}
+.partnership-funding dt {
+  font-size: 10px;
+  line-height: 1.6;
+  color: #53616e;
+}
+.partnership-funding dd {
+  margin: 6px 0 0;
+  font: 600 21px/1.3 "Space Grotesk", sans-serif;
+  letter-spacing: -0.7px;
+}
+.partnership-funding > div:last-child dd {
+  color: var(--blue);
+}
+.partnership-overview .package-ticket {
+  min-height: 170px;
+  padding: 16px 14px 12px;
+  gap: 10px;
+}
+.partnership-overview .ticket-price-exact {
+  font-size: 24px;
+  line-height: 1.3;
+  letter-spacing: -1px;
+  white-space: normal;
+}
+.partnership-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 24px;
+}
+.partnership-detail .appendix-heading {
+  min-height: 0;
+}
+.partnership-detail .appendix-heading .full-title {
+  max-width: none;
+}
+.partnership-intro,
+.partnership-copy,
+.partnership-notes {
+  font-size: 13px;
+  line-height: 1.75;
+}
+.partnership-copy h3,
+.partnership-notes h3,
+.partnership-detail .full-gold h3 {
+  margin-bottom: 10px;
+  font-size: 19px;
+}
+.partnership-copy p + p,
+.partnership-notes p + p,
+.partnership-detail .full-gold p {
+  margin-top: 10px;
+}
+.partnership-notes {
+  padding: 18px 20px;
+  background: #edf5fc;
+  border-radius: 5px;
+}
+.partnership-detail .benefit-table {
+  font-size: 12px;
+  line-height: 1.5;
+}
+.partnership-detail .benefit-table caption {
+  text-align: start;
+  font-weight: 600;
+  padding-bottom: 12px;
+}
+.partnership-detail .benefit-table th,
+.partnership-detail .benefit-table td {
+  padding: 9px 7px;
+}
+.partnership-detail .benefit-table th:first-child {
+  width: 27%;
+}
+.partnership-detail .benefit-table thead span {
+  display: inline-block;
+  margin-top: 6px;
+  font-weight: 400;
+}
+.partnership-terms > ol > li {
+  padding-block: 16px;
+  font-size: 13px;
+  line-height: 1.75;
+}
+.partnership-terms > ol > li::before {
+  top: 17px;
+}
+@media screen and (max-width: 540px) {
+  .partnership-overview .packages-hero {
+    height: auto;
+  }
+  .partnership-overview .packages-hero h2 {
+    font-size: 39px;
+  }
+  .partnership-overview .packages-sculpture {
+    width: 100%;
+    height: 200px;
+    inset: auto;
+  }
+  .partnership-funding {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .partnership-funding dd {
+    font-size: 24px;
+  }
+  .partnership-overview .package-tickets,
+  .partnership-links {
+    grid-template-columns: 1fr;
+  }
+  .partnership-overview .package-ticket {
+    min-height: 0;
+    padding: 20px;
+    gap: 14px;
+  }
+  .partnership-overview .package-ticket > p:not(.ticket-price),
+  .partnership-overview .ticket-bottom {
+    font-size: 12px;
+  }
+  .partnership-intro,
+  .partnership-copy,
+  .partnership-notes,
+  .partnership-terms > ol > li {
+    font-size: 14px;
+  }
 }

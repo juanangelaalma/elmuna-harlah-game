@@ -97,10 +97,12 @@ printButton.addEventListener("click", async () => {
   try {
     await artworkReady;
     await document.fonts.ready;
-    if (!image.hidden) await image.decode();
+    await Promise.all([...document.querySelectorAll(".mc-card img")]
+      .filter(image => !image.hidden && (image.currentSrc || image.getAttribute("src")))
+      .map(image => image.decode()));
     window.print();
   } catch {
-    status.textContent = "Gunakan menu Cetak browser jika dialog belum terbuka.";
+    status.textContent = "Pencetakan belum dibuka karena ada gambar atau font yang gagal dimuat. Muat ulang halaman, lalu coba lagi.";
   } finally {
     printButton.disabled = false;
   }

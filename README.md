@@ -70,6 +70,12 @@ outlines. Use 100% scale, enable background graphics, and disable browser
 headers/footers. Cut the two faces and glue them back-to-back; this layout is not
 automatic duplex printing. The back stays blank for handwritten rundown notes,
 with six ruled lines. Browser printing also works without JavaScript.
+Like the proposal, printing uses a fixed physical A4 sheet with zero browser
+page margins, explicit mm/px card measurements, and decoded images/fonts before
+opening the print dialog. Responsive container-query sizing is screen-only;
+both A6 faces retain their dimensions when printing from mobile or desktop.
+The original 1600 × 1600 emblem PNG is embedded without a CSS-filter snapshot,
+and text remains selectable. Choose **Save as PDF** in the browser print dialog.
 
 ## A4 heritage page
 
@@ -83,17 +89,27 @@ and the fallback illustration are available without JavaScript.
 
 ## Sponsorship proposal
 
-Open `/proposal.html` using “Proposal” on the heritage page. It now contains
-**23 A4 portrait sheets**: 14 concise editorial chapters and nine appendices
-preserving the full text, event facts, budget, sponsorship matrix, and conditions
-from `Proposal_Sponsorship_Harlah_43 (1).md`. Links in the main chapters jump to
-the corresponding full appendix.
+Open `/proposal.html` using “Proposal” on the heritage page. It contains
+**25 A4 portrait sheets**: 14 editorial chapters and 11 appendices. Event details
+and partnership terms reflect the latest supplied material; the original
+`Proposal_Sponsorship_Harlah_43 (1).md` is historical source material, not the
+current sponsorship contract. Chapter links jump to the corresponding appendix.
 
-Every sheet has a relevant Three.js illustration. Twelve procedural sculptures
-are rendered once each using a single temporary WebGL context; appendix pages
-reuse the high-resolution PNGs. GPU resources are released after rendering.
-All images remain available in print, with local decorative fallback
-illustrations when WebGL is unavailable. There is no animation loop.
+Page 11 summarizes six support categories and distinguishes the Rp28,829,000 RAB,
+Rp2,480,000 planned income, and Rp26,349,000 funding gap. Pages 20–23 contain the
+premium benefit matrix, Sahabat Harlah matrix and Donatur category, in-kind and
+event-specific support, and partnership conditions. In-kind contributions use
+the highest qualifying package threshold; equipment loans use rental/service
+value, not purchase price. Sponsor Tunggal requires a separate exclusivity
+agreement. The two benefit matrices remain separate and horizontally scrollable
+on narrow screens, with all columns visible in A4 print.
+
+Editorial chapters use relevant Three.js illustrations. Twelve procedural
+sculptures are rendered once each using a single temporary WebGL context; related
+appendices reuse their high-resolution PNGs. Dense partnership pages prioritize
+readable tables and copy. GPU resources are released after rendering. Images
+remain available in print, with local fallback illustrations when WebGL is
+unavailable. There is no animation loop.
 
 Use the seven image upload areas to add photos or posters. Images are included
 in printing and remembered in IndexedDB on the same browser/origin. “Hapus”
@@ -101,18 +117,18 @@ restores the original image or empty area. Images are not uploaded to a server.
 If local storage is unavailable, images remain usable for the current visit and
 the status message explains this. Existing saved images retain their upload keys.
 
-“Cetak 23 halaman A4” waits for the illustrations, images, and fonts before opening
+“Cetak 25 halaman A4” waits for the illustrations, images, and fonts before opening
 the print dialog. Choose A4, 100% scale, no margins, and disable browser
-headers/footers. Print styles hide editing controls. Missing event, archive, and
-contact information remains explicitly marked as in the source proposal.
+headers/footers. Print styles hide editing controls. Missing archive and contact
+information remains explicitly marked.
 
 ### Editorial preview
 
 `/proposal-preview.html` contains three A4 design samples: cover, Dialog
-Interaktif, and a six-package sponsorship overview. It uses the same rendering,
-image storage, and print implementation as the complete editorial proposal,
-including the same saved dialogue poster. Its detail links point to the complete
-proposal's appendices.
+Interaktif, and the current six-category sponsorship overview. It uses the same
+rendering, image storage, and print implementation as the complete editorial
+proposal, including the same saved dialogue poster. Its detail links point to
+the complete proposal's premium, regular, in-kind, and terms appendices.
 
 Each sample has a distinct Three.js sculpture. One temporary WebGL renderer
 creates three high-resolution PNGs, then releases GPU resources; these images

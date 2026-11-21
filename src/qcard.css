@@ -27,8 +27,7 @@
 .mc-front::before { content: ""; position: absolute; width: 82cqw; height: 105cqw; left: 38cqw; top: -9cqw; border-radius: 48%; background: color-mix(in srgb, var(--blue) 52%, var(--ink)); transform: rotate(26deg); z-index: -2; }
 .mc-front::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 80% 40%, #a7def326, transparent 52%); z-index: -1; pointer-events: none; }
 .card-masthead { display: flex; align-items: start; justify-content: space-between; position: relative; z-index: 1; }
-.card-wordmark { font-family: "Space Grotesk", sans-serif; font-size: 3.3cqw; line-height: .9; letter-spacing: -.12cqw; font-weight: 600; }
-.card-wordmark b { font-size: 4cqw; }
+.card-wordmark-image { display: block; width: 30cqw; height: auto; object-fit: contain; }
 .card-masthead > span:last-child { font-size: 1.65cqw; letter-spacing: .24cqw; line-height: 1.5; text-align: end; }
 .front-copy { position: relative; z-index: 1; width: 58cqw; margin-top: 1cqw; }
 .front-copy > p:first-child { font-family: "Space Grotesk", sans-serif; font-size: 1.85cqw; letter-spacing: .32cqw; margin: 0 0 1.8cqw; }
@@ -81,11 +80,45 @@
   .mc-print-guide > p { grid-column: 1; }
 }
 @media print {
-  @page { size: A4 portrait; margin: 10mm; }
+  @page { size: A4 portrait; margin: 0; }
   html, body { margin: 0; padding: 0; background: white; }
   .qcard-page .header, .mc-skip, .mc-intro, .mc-art-status, .mc-preview-heading, .mc-face figcaption, .mc-print-guide { display: none !important; }
   .mc-main { width: auto; max-width: none; padding: 0; margin: 0; }
-  .mc-print-sheet { display: flex; flex-direction: column; align-items: center; gap: 12mm; padding: 0; margin: 0; max-width: none; break-inside: avoid; }
-  .mc-face { width: 148mm; margin: 0; break-inside: avoid; }
+  /* Like the proposal, print a physical sheet rather than a responsive preview. */
+  .mc-print-sheet { display: flex; flex-direction: column; align-items: center; width: 210mm; min-height: 297mm; gap: 12mm; padding: 10mm; margin: 0; max-width: none; break-inside: avoid; }
+  .mc-face { width: 148mm; margin: 0; container-type: normal; break-inside: avoid; }
   .mc-card { width: 148mm; height: 105mm; aspect-ratio: auto; box-shadow: none; outline: .2mm dashed var(--ink); outline-offset: 1.5mm; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  /* Fixed mm/px measurements keep print independent of container-query support. */
+  .mc-front { padding: 8mm; isolation: auto; }
+  .mc-front::before { width: 121.36mm; height: 155.4mm; left: 56.24mm; top: -13.32mm; z-index: 0; }
+  .mc-front::after { z-index: 0; }
+  .card-wordmark-image { width: 44.4mm; }
+  .card-masthead > span:last-child { font-size: 9.23px; letter-spacing: .355mm; }
+  .front-copy { width: 85.84mm; margin-top: 1.48mm; }
+  .front-copy > p:first-child { font-size: 10.35px; letter-spacing: .474mm; margin-bottom: 2.664mm; }
+  .front-copy h2 { font-size: 43.07px; letter-spacing: -.592mm; }
+  .front-tagline { font-size: 13.98px; margin-top: 6.808mm; border-inline-start-width: .666mm; padding-inline-start: 3.108mm; }
+  .card-foot { font-size: 8.67px; letter-spacing: .34mm; }
+  .front-rings { width: 97.68mm; height: 97.68mm; right: -31.08mm; bottom: -38.48mm; z-index: 0; }
+  .front-rings::before, .front-rings::after { inset: 5.92mm; }
+  .front-rings::after { inset: 11.84mm; }
+  .anniversary-art { right: -4.44mm; top: 13.32mm; width: 72.52mm; height: 71.04mm; z-index: 1; }
+  /* Embed the original PNG, not a lower-resolution filtered snapshot. */
+  .anniversary-art img { filter: none; }
+  .art-number { top: 16.28mm; right: 11.84mm; font-size: 156.62px; letter-spacing: -3.848mm; text-shadow: 1.48mm 1.924mm 0 #14213d40; }
+  .art-flower { width: 11.84mm; height: 11.84mm; right: 11.84mm; top: 2.96mm; }
+  .art-orbit { inset: 25.16mm 2.96mm 17.76mm; border-width: 2.22mm; }
+  .mc-back { padding: 7.4mm 8mm; }
+  .back-masthead { padding-bottom: 4.44mm; border-bottom-width: .74mm; }
+  .back-masthead::after { bottom: -.74mm; width: 16.28mm; height: .74mm; }
+  .back-masthead > span:first-child { gap: 2.22mm; font-size: 14.54px; letter-spacing: -.148mm; }
+  .back-masthead .mc-flower { width: 6.364mm; height: 6.364mm; }
+  .back-masthead > span:last-child { font-size: 8.39px; letter-spacing: .222mm; }
+  .back-fields { gap: 7.4mm; margin-block: 5.92mm 2.96mm; font-size: 9.23px; letter-spacing: .222mm; }
+  .back-fields > span { gap: 2.072mm; }
+  .back-fields i { height: 4.44mm; }
+  .back-foot { margin-top: 4.44mm; }
+  .back-foot > span { font-size: 7.55px; letter-spacing: .192mm; }
+  .back-foot b { font-size: 27.97px; letter-spacing: -.592mm; }
+  .back-foot b span { font-size: 7.83px; margin-left: .74mm; }
 }

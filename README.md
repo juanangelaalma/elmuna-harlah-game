@@ -98,6 +98,8 @@ appendices; event details are presented directly in chapters 5–8.
 The cover uses the supplied transparent `/road-to-43-branding.png` directly on
 the white sheet, without an added background.
 
+The Tunggal, Utama, Mitra, and Pendukung cards carry a “PAKET PREMIUM” label,
+with a clickable page-18 reference that also works as a printed page reference.
 Page 11 summarizes six support categories and distinguishes the Rp28,829,000 RAB,
 Rp2,480,000 planned income from the mosque youth organization's cash fund,
 and Rp26,349,000 funding gap. Pages 18–21 contain the

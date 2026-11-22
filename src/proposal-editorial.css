@@ -968,6 +968,13 @@
   padding: 16px 14px 12px;
   gap: 10px;
 }
+.partnership-overview .ticket-category {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 8px;
+  line-height: 1.4;
+  letter-spacing: 0.8px;
+}
 .partnership-overview .ticket-price-exact {
   font-size: 24px;
   line-height: 1.3;

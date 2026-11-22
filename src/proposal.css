@@ -265,6 +265,13 @@
     padding: 0;
     background: white;
   }
+  .proposal-page > main {
+    /* Do not let the site's horizontal clipping fragment printed sheets. */
+    overflow: visible;
+  }
+  .proposal-page.editorial-preview {
+    background: white;
+  }
   .proposal-toolbar,
   .upload-controls,
   .proposal-page .skip-link,
@@ -272,14 +279,25 @@
     display: none !important;
   }
   .proposal-sheet {
+    width: 210mm;
+    /* Leave 1 mm for physical-unit rounding in browser/printer pagination. */
+    height: 296mm;
+    min-height: 0;
     margin: 0;
+    /* Explicit tracks keep the footer in the sheet, not a flex continuation. */
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr) auto;
     box-shadow: none;
-    break-after: page;
+    break-inside: avoid-page;
+    break-after: auto;
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
   }
-  .proposal-sheet:last-child {
-    break-after: auto;
+  .proposal-sheet + .proposal-sheet {
+    break-before: page;
+  }
+  .proposal-sheet > .editorial-body {
+    min-width: 0;
   }
   .editorial-masthead,
   .editorial-footer,

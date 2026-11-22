@@ -153,7 +153,6 @@
   .fallback-plinth { width: 230px; height: 85px; bottom: 15px; }
 }
 @media print {
-  .editorial-preview .proposal-sheet { width: 210mm; height: 297mm; }
   .editorial-poster { height: 350px; }
   .editorial-preview .scene-image { object-fit: contain; }
 }

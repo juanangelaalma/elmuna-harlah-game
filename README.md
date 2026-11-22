@@ -94,7 +94,8 @@ Open `/proposal.html` using “Proposal” on the heritage page. It contains
 and partnership terms reflect the latest supplied material; the original
 `Proposal_Sponsorship_Harlah_43 (1).md` is historical source material, not the
 current sponsorship contract. Chapter links jump to the remaining corresponding
-appendices; event details are presented directly in chapters 5–8.
+appendices and name their destination page for printed copies while remaining
+clickable in digital copies; event details are presented directly in chapters 5–8.
 The cover uses the supplied transparent `/road-to-43-branding.png` directly on
 the white sheet, without an added background.
 
@@ -149,6 +150,14 @@ the status message explains this. Existing saved images retain their upload keys
 the print dialog. Choose A4, 100% scale, no margins, and disable browser
 headers/footers. Print styles hide editing controls. The optional group photo
 on page 2 remains available for upload.
+Print sheets reserve 1 mm of A4 height for physical-unit rounding and start each
+subsequent sheet with a page break, rather than forcing a trailing break. Printing
+uses explicit header/body/footer grid tracks and removes the site's main-container
+clipping so footers stay with their content instead of fragmenting onto another page.
+Shared rules apply to the proposal, editorial preview, and sponsorship agreement.
+The production PDF check verifies 23, 3, and 2 pages respectively at desktop/mobile
+viewport widths. Run it against a built preview with
+`PROPOSAL_PRINT_URL=http://127.0.0.1:4195 npm test -- tests/proposal-print.spec.js`.
 
 “Unduh Word (.docx)” creates a local download named
 `Proposal-Sahabat-Harlah-43.docx`. The Word generator is loaded only when requested;

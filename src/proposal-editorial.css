@@ -974,10 +974,20 @@
   margin-bottom: 6px;
   border: 1px solid currentColor;
   border-radius: 999px;
+  background: white;
+  color: var(--ink);
   font-size: 8px;
   font-weight: 600;
   line-height: 1.4;
   letter-spacing: 0.8px;
+}
+.partnership-overview .ticket-category-premium {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+.partnership-overview .ticket-category-regular {
+  background: var(--sky);
+  border-color: var(--sky);
 }
 .partnership-overview .ticket-price-exact {
   font-size: 24px;

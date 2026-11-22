@@ -123,6 +123,17 @@ the highest qualifying package threshold; equipment loans use rental/service
 value, not purchase price. Sponsor Tunggal requires a separate exclusivity
 agreement. The two benefit matrices remain separate and horizontally scrollable
 on narrow screens, with all columns visible in A4 print.
+Page 14 includes the five-step sponsorship flow: contact, agree benefits and timing,
+transfer/hand over and confirm, submit sponsor materials, then delivery and reporting.
+Premium and special arrangements use an agreement; voluntary donations are recorded
+and acknowledged. Sponsor slides mean one shared Instagram appreciation carousel,
+separate from dedicated feed posts; recap logos appear at the end of one recap video.
+Logo sizing follows package hierarchy with visually equivalent sizing within each tier.
+Sponsor Tunggal receives four MC mentions. Regular packages include one dedicated/shared
+Story with an account tag; the Rp500,000 package gets one shared MC acknowledgement.
+The appreciation panel is one organizer-produced logo panel at the finale, not a booth.
+Booth/banner dimensions, location, equipment provider, and installation timing are
+agreed before the partnership is finalized. These details preserve the 21-page layout.
 
 Content follow-up:
 - [x] Updated the Instagram handle embedded in the dialog and El Muna Fun Cup

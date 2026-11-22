@@ -349,15 +349,15 @@
   margin-top: 14px;
 }
 .editorial-contact .full-title {
-  font-size: 60px;
+  font-size: 48px;
 }
 .editorial-contact .full-hero {
-  min-height: 290px;
+  min-height: 180px;
 }
 .editorial-contact .full-hero .compact-scene {
-  top: 100px;
-  height: 210px;
-  width: 250px;
+  top: 40px;
+  height: 140px;
+  width: 180px;
 }
 .editorial-contact .full-two-column > section {
   padding: 22px;
@@ -399,6 +399,30 @@
 .editorial-contact .full-gold {
   margin-top: auto;
   font-size: 22px;
+}
+.editorial-full .editorial-contact .editorial-body {
+  gap: 16px;
+}
+.editorial-contact .full-channels {
+  grid-template-columns: 1fr 1fr;
+}
+.sponsorship-flow {
+  font-size: 13px;
+  line-height: 1.65;
+}
+.sponsorship-flow h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.sponsorship-flow ol {
+  margin: 0;
+  padding-inline-start: 20px;
+}
+.sponsorship-flow li + li {
+  margin-top: 5px;
+}
+.sponsorship-flow p {
+  margin-top: 10px;
 }
 .appendix-heading {
   position: relative;
@@ -632,6 +656,12 @@
   }
   .full-channels {
     margin: 0;
+  }
+  .editorial-contact .full-channels {
+    grid-template-columns: 1fr;
+  }
+  .sponsorship-flow {
+    font-size: 14px;
   }
   .appendix-heading {
     min-height: 0;
@@ -1042,6 +1072,12 @@
   padding: 18px 20px;
   background: #edf5fc;
   border-radius: 5px;
+}
+.editorial-full #appendix-sahabat .editorial-body {
+  gap: 14px;
+}
+#appendix-sahabat .full-gold {
+  padding: 18px 20px;
 }
 .partnership-detail .benefit-table {
   font-size: 12px;

@@ -125,6 +125,7 @@ Content follow-up:
 
 Pages 12–13 present Harlah 41 (2024) and Harlah 42 (2025), with event summaries,
 compact theme boxes, and uploadable documentation images replacing the fact lists.
+Both pages use the supplied 2400 × 900 px documentation collages as their default images.
 The archive uploads retain the `archive-2024` and `archive-2025` storage keys, so
 images previously saved in the same browser/origin are restored. Use landscape
 artwork around 2400 × 900 px (8:3); the printed image area is approximately

@@ -96,8 +96,8 @@ and partnership terms reflect the latest supplied material; the original
 current sponsorship contract. Chapter links jump to the remaining corresponding
 appendices and name their destination page for printed copies while remaining
 clickable in digital copies; event details are presented directly in chapters 5–8.
-Page 22 contains the full theme and tagline, linked from page 3. The former
-partnership-invitation appendix and its detail link have been removed.
+Page 17 contains the full theme and tagline immediately after the page-16 introduction,
+linked from page 3. The partnership-invitation appendix and its detail link are removed.
 The cover uses the supplied transparent `/road-to-43-branding.png` directly on
 the white sheet, without an added background.
 
@@ -108,12 +108,12 @@ Premium badges are gold with navy text, regular badges sky-blue with navy text,
 donation badges white with a navy outline, and in-kind badges navy with white text.
 Category labels remain explicit for monochrome printing.
 The first six cards form a three-column, two-row grid; Barang & Jasa spans the
-third row and links to page 20. Mobile screens stack the cards. Word export uses
+third row and links to page 21. Mobile screens stack the cards. Word export uses
 the same grouping and preserves card colors independently of their position.
-A clickable page-18 reference identifies the four premium packages.
+A clickable page-19 reference identifies the four premium packages.
 Page 11 summarizes seven support options and distinguishes the Rp28,829,000 RAB,
 Rp2,480,000 planned income from the mosque youth organization's cash fund,
-and Rp26,349,000 funding gap. Pages 18–21 contain the
+and Rp26,349,000 funding gap. Pages 19–22 contain the
 premium benefit matrix, Sahabat Harlah matrix and Donatur category, in-kind and
 event-specific support, and partnership conditions. In-kind contributions use
 the highest qualifying package threshold; equipment loans use rental/service

@@ -129,6 +129,8 @@ Indonesian message template (name, organization, and selected package/in-kind su
 The template and contact numbers are also printed as text. Local 616 × 616 px QR PNGs
 have four-module quiet zones and render at approximately 38 mm square on paper.
 The QR codes and contact-number links include the message; nothing is sent automatically.
+The visible message and both QR payloads use separate lines for the greeting,
+sender identity, requested support, information request, and thanks.
 Sponsor slides mean one shared Instagram appreciation carousel,
 separate from dedicated feed posts; recap logos appear at the end of one recap video.
 Logo sizing follows package hierarchy with visually equivalent sizing within each tier.

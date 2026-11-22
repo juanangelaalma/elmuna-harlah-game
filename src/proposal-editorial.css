@@ -352,15 +352,15 @@
   font-size: 48px;
 }
 .editorial-contact .full-hero {
-  min-height: 180px;
+  min-height: 130px;
 }
 .editorial-contact .full-hero .compact-scene {
-  top: 40px;
-  height: 140px;
+  top: 0;
+  height: 130px;
   width: 180px;
 }
 .editorial-contact .full-two-column > section {
-  padding: 22px;
+  padding: 16px;
   background: #edf5fc;
   border-radius: 5px;
   font-size: 13px;
@@ -398,31 +398,45 @@
 }
 .editorial-contact .full-gold {
   margin-top: auto;
+  padding: 18px 20px;
   font-size: 22px;
 }
 .editorial-full .editorial-contact .editorial-body {
-  gap: 16px;
+  gap: 14px;
 }
 .editorial-contact .full-channels {
   grid-template-columns: 1fr 1fr;
 }
-.sponsorship-flow {
+.sponsorship-whatsapp {
   font-size: 13px;
   line-height: 1.65;
 }
-.sponsorship-flow h3 {
+.sponsorship-whatsapp h3 {
   font-size: 18px;
   margin-bottom: 10px;
 }
-.sponsorship-flow ol {
-  margin: 0;
-  padding-inline-start: 20px;
+.sponsorship-qr-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 12px;
 }
-.sponsorship-flow li + li {
-  margin-top: 5px;
+.sponsorship-qr {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
 }
-.sponsorship-flow p {
-  margin-top: 10px;
+.sponsorship-qr img {
+  display: block;
+  width: 144px;
+  height: 144px;
+}
+.sponsorship-qr span {
+  overflow-wrap: anywhere;
+}
+.sponsorship-message {
+  margin-top: 12px;
 }
 .appendix-heading {
   position: relative;
@@ -660,8 +674,11 @@
   .editorial-contact .full-channels {
     grid-template-columns: 1fr;
   }
-  .sponsorship-flow {
+  .sponsorship-whatsapp {
     font-size: 14px;
+  }
+  .sponsorship-qr-grid {
+    grid-template-columns: 1fr;
   }
   .appendix-heading {
     min-height: 0;

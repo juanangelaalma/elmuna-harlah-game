@@ -123,10 +123,13 @@ the highest qualifying package threshold; equipment loans use rental/service
 value, not purchase price. Sponsor Tunggal requires a separate exclusivity
 agreement. The two benefit matrices remain separate and horizontally scrollable
 on narrow screens, with all columns visible in A4 print.
-Page 14 includes the five-step sponsorship flow: contact, agree benefits and timing,
-transfer/hand over and confirm, submit sponsor materials, then delivery and reporting.
-Premium and special arrangements use an agreement; voluntary donations are recorded
-and acknowledged. Sponsor slides mean one shared Instagram appreciation carousel,
+Page 14 replaces the step-by-step flow with two clickable WhatsApp QR codes for
+Iqtifa and Zahwa, each opening its own `wa.me` contact with the same editable
+Indonesian message template (name, organization, and selected package/in-kind support).
+The template and contact numbers are also printed as text. Local 616 × 616 px QR PNGs
+have four-module quiet zones and render at approximately 38 mm square on paper.
+The QR codes and contact-number links include the message; nothing is sent automatically.
+Sponsor slides mean one shared Instagram appreciation carousel,
 separate from dedicated feed posts; recap logos appear at the end of one recap video.
 Logo sizing follows package hierarchy with visually equivalent sizing within each tier.
 Sponsor Tunggal receives four MC mentions. Regular packages include one dedicated/shared

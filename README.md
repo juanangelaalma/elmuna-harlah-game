@@ -134,7 +134,6 @@ separate from dedicated feed posts; recap logos appear at the end of one recap v
 Logo sizing follows package hierarchy with visually equivalent sizing within each tier.
 Sponsor Tunggal receives four MC mentions. Regular packages include one dedicated/shared
 Story with an account tag; the Rp500,000 package gets one shared MC acknowledgement.
-The appreciation panel is one organizer-produced logo panel at the finale, not a booth.
 Booth/banner dimensions, location, equipment provider, and installation timing are
 agreed before the partnership is finalized. These details preserve the 21-page layout.
 

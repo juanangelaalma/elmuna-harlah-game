@@ -316,29 +316,20 @@
   font-size: 14px;
   line-height: 1.8;
 }
-.archive-facts {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px 28px;
+.editorial-full .editorial-archive .editorial-body {
+  gap: 16px;
 }
-.archive-facts dt {
-  color: var(--blue);
-  font-size: 11px;
-  margin-bottom: 6px;
-}
-.archive-facts dd {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.6;
+.editorial-archive .full-image {
+  height: 260px;
 }
 .archive-theme {
   background: #fff3d5;
   border-radius: 5px;
-  padding: 20px 24px;
+  padding: 12px 18px;
 }
 .archive-theme p {
-  font: 500 21px/1.5 "Lora", serif;
-  margin-top: 10px;
+  font: 500 18px/1.4 "Lora", serif;
+  margin-top: 6px;
 }
 .archive-documentation {
   display: grid;
@@ -633,10 +624,6 @@
   }
   .editorial-archive .archive-year {
     font-size: 80px;
-  }
-  .archive-facts {
-    grid-template-columns: 1fr;
-    gap: 18px;
   }
   .archive-documentation {
     grid-template-columns: 1fr;

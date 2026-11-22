@@ -124,13 +124,13 @@ Content follow-up:
   posters (pages 5–6) to `remas_elmuna.ta` using the supplied replacement posters.
 
 Pages 12–13 present Harlah 41 (2024) and Harlah 42 (2025), with event summaries,
-dates, venues, and themes transcribed from the supplied reference posters.
-The posters themselves are not embedded. Locally generated QR PNGs and clickable
-links point to the supplied Instagram reel/post without tracking parameters;
-QRs include four-module quiet zones for print scanning.
-The Harlah 42 archive covers both the 27 December 2025 Festival Banjari and
-the 28 December 2025, 19:00 WIB closing pengajian with Ust. Dr. H. Soim Alkassi,
-M.Pd.I., accompanied by Hadroh El Muna Tulungagung.
+compact theme boxes, and uploadable documentation images replacing the fact lists.
+The archive uploads retain the `archive-2024` and `archive-2025` storage keys, so
+images previously saved in the same browser/origin are restored. Use landscape
+artwork around 2400 × 900 px (8:3); the printed image area is approximately
+184 × 69 mm. Images use contain fitting so text and artwork are not cropped.
+Locally generated QR PNGs link to the supplied Instagram reel/post without tracking
+parameters; QRs include four-module quiet zones for print scanning.
 
 Page 15 is the approval sheet dated 13 November 2026, placed after contact details
 and before the appendices. It has two signature rows: the event chair and secretary,
@@ -144,7 +144,7 @@ readable tables and copy. GPU resources are released after rendering. Images
 remain available in print, with local fallback illustrations when WebGL is
 unavailable. There is no animation loop.
 
-Use the five image upload areas to add photos or posters. Images are included
+Use the seven image upload areas to add photos or posters. Images are included
 in printing and remembered in IndexedDB on the same browser/origin. “Hapus”
 restores the original image or empty area. Images are not uploaded to a server.
 If local storage is unavailable, images remain usable for the current visit and

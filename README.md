@@ -90,7 +90,7 @@ and the fallback illustration are available without JavaScript.
 ## Sponsorship proposal
 
 Open `/proposal.html` using “Proposal” on the heritage page. It contains
-**23 A4 portrait sheets**: 14 editorial chapters, an approval sheet, and 8 appendices. Event details
+**22 A4 portrait sheets**: 14 editorial chapters, an approval sheet, and 7 appendices. Event details
 and partnership terms reflect the latest supplied material; the original
 `Proposal_Sponsorship_Harlah_43 (1).md` is historical source material, not the
 current sponsorship contract. Chapter links jump to the remaining corresponding
@@ -151,7 +151,7 @@ restores the original image or empty area. Images are not uploaded to a server.
 If local storage is unavailable, images remain usable for the current visit and
 the status message explains this. Existing saved images retain their upload keys.
 
-“Cetak 23 halaman A4” waits for the illustrations, images, and fonts before opening
+“Cetak 22 halaman A4” waits for the illustrations, images, and fonts before opening
 the print dialog. Choose A4, 100% scale, no margins, and disable browser
 headers/footers. Print styles hide editing controls. The optional group photo
 on page 2 remains available for upload.
@@ -160,7 +160,7 @@ subsequent sheet with a page break, rather than forcing a trailing break. Printi
 uses explicit header/body/footer grid tracks and removes the site's main-container
 clipping so footers stay with their content instead of fragmenting onto another page.
 Shared rules apply to the proposal, editorial preview, and sponsorship agreement.
-The production PDF check verifies 23, 3, and 2 pages respectively at desktop/mobile
+The production PDF check verifies 22, 3, and 2 pages respectively at desktop/mobile
 viewport widths. Run it against a built preview with
 `PROPOSAL_PRINT_URL=http://127.0.0.1:4195 npm test -- tests/proposal-print.spec.js`.
 
@@ -175,8 +175,8 @@ No proposal content or images are sent to a server.
 The Word file preserves editable paragraphs and native tables rather than
 screenshots of pages, with embedded artwork and images. It uses Arial and Georgia
 italic for stable, widely available typography, fixed A4 sections, and bounded
-images/table widths. The downloaded document was rendered in LibreOffice 25.2:
-23 A4 pages, all benefit-table rows preserved, and both archive QR codes readable.
+images/table widths. An earlier 23-page version was rendered in LibreOffice 25.2,
+with all benefit-table rows preserved and both archive QR codes readable.
 Line wrapping and spacing can still vary between Word applications or after edits;
 use print/PDF when exact browser appearance is required.
 
@@ -184,7 +184,7 @@ use print/PDF when exact browser appearance is required.
 
 Open `/perjanjian-sponsorship.html` through “Surat perjanjian” in the proposal
 toolbar. It is a separate two-page A4 agreement without an agreement-number field,
-leaving the proposal at 23 pages. Page 1 covers identity and support category;
+leaving the proposal at 22 pages. Page 1 covers identity and support category;
 page 2 covers contributions, concise terms, validity, and signatures. Print it and fill it in by hand; fields and printed
 checkboxes are intentionally not interactive browser controls.
 

@@ -99,13 +99,17 @@ clickable in digital copies; event details are presented directly in chapters 5�
 The cover uses the supplied transparent `/road-to-43-branding.png` directly on
 the white sheet, without an added background.
 
-All six cards carry outlined category badges: “PAKET PREMIUM” for Tunggal,
-Utama, Mitra, and Pendukung; “PAKET REGULER” for Sahabat Harlah; and
-“DONASI SUKARELA” for Donatur. Badges use navy text: premium has a gold fill,
-regular has a sky-blue fill, and voluntary donations have a white fill with a navy
-outline. Category labels remain explicit for monochrome printing.
+All seven cards carry category badges: “PAKET PREMIUM” for Tunggal,
+Utama, Mitra, and Pendukung; “PAKET REGULER” for Sahabat Harlah;
+“DONASI SUKARELA” for Donatur; and “BARANG/JASA” for in-kind support.
+Premium badges are gold with navy text, regular badges sky-blue with navy text,
+donation badges white with a navy outline, and in-kind badges navy with white text.
+Category labels remain explicit for monochrome printing.
+The first six cards form a three-column, two-row grid; Barang & Jasa spans the
+third row and links to page 20. Mobile screens stack the cards. Word export uses
+the same grouping and preserves card colors independently of their position.
 A clickable page-18 reference identifies the four premium packages.
-Page 11 summarizes six support categories and distinguishes the Rp28,829,000 RAB,
+Page 11 summarizes seven support options and distinguishes the Rp28,829,000 RAB,
 Rp2,480,000 planned income from the mosque youth organization's cash fund,
 and Rp26,349,000 funding gap. Pages 18–21 contain the
 premium benefit matrix, Sahabat Harlah matrix and Donatur category, in-kind and

@@ -963,10 +963,34 @@
 .partnership-funding > div:last-child dd {
   color: var(--blue);
 }
+.editorial-full .partnership-overview .editorial-body {
+  gap: 14px;
+}
 .partnership-overview .package-ticket {
   min-height: 170px;
-  padding: 16px 14px 12px;
-  gap: 10px;
+  padding: 12px 14px;
+  gap: 8px;
+}
+.partnership-overview .ticket-featured {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.3fr;
+  align-items: center;
+  min-height: 0;
+}
+.partnership-overview .ticket-featured .ticket-top,
+.partnership-overview .ticket-featured .ticket-price {
+  grid-row: 1 / 3;
+}
+.partnership-overview .ticket-featured .ticket-top {
+  grid-column: 1;
+}
+.partnership-overview .ticket-featured .ticket-price {
+  grid-column: 2;
+}
+.partnership-overview .ticket-featured > p:not(.ticket-price),
+.partnership-overview .ticket-featured .ticket-bottom {
+  grid-column: 3;
 }
 .partnership-overview .ticket-category {
   display: inline-block;
@@ -988,6 +1012,17 @@
 .partnership-overview .ticket-category-regular {
   background: var(--sky);
   border-color: var(--sky);
+}
+.partnership-overview .ticket-category-in-kind {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: white;
+}
+.partnership-overview .ticket-value {
+  font-size: 20px;
+  line-height: 1.3;
+  letter-spacing: -0.5px;
+  white-space: normal;
 }
 .partnership-overview .ticket-price-exact {
   font-size: 24px;
@@ -1084,6 +1119,10 @@
     min-height: 0;
     padding: 20px;
     gap: 14px;
+  }
+  .partnership-overview .ticket-featured {
+    display: flex;
+    align-items: stretch;
   }
   .partnership-overview .package-ticket > p:not(.ticket-price),
   .partnership-overview .ticket-bottom {

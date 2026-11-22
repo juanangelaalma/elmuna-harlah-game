@@ -458,20 +458,30 @@ export async function createProposalWord(root) {
     const funding = body.querySelector(".partnership-funding");
     if (funding) result.push(...await definitionList(funding, context));
     const tickets = [...body.querySelectorAll(".package-ticket")];
-    const widths = [Math.floor(context.width / 2), context.width - Math.floor(context.width / 2)];
+    const columnWidth = Math.floor(context.width / 3);
+    const widths = [columnWidth, columnWidth, context.width - columnWidth * 2];
     const rows = [];
-    for (let index = 0; index < tickets.length; index += 2) {
-      const cells = [];
-      for (let offset = 0; offset < 2; offset++) {
-        const ticket = tickets[index + offset];
-        const background = index + offset === 0 ? COLORS.blue : index + offset === 1 ? COLORS.gold : COLORS.pale;
-        const children = ticket ? await renderChildren(ticket, {
-          ...context, width: widths[offset] - 300, dense: true, size: 17,
-          color: index + offset === 0 ? COLORS.white : COLORS.ink,
-        }) : [];
-        cells.push(cell(children, widths[offset], { shading: fill(background), margins: { top: 140, bottom: 80, left: 170, right: 170 }, borders: { top: { ...NO_BORDER, size: 12 }, bottom: { style: BorderStyle.SINGLE, size: 12, color: COLORS.white } } }));
+    let cells = [];
+    for (const ticket of tickets) {
+      const featured = ticket.classList.contains("ticket-featured");
+      const span = featured ? 3 : 1;
+      const width = featured ? context.width : widths[cells.length];
+      const primary = ticket.classList.contains("ticket-primary");
+      const background = primary ? COLORS.blue : ticket.classList.contains("ticket-gold") ? COLORS.gold : COLORS.pale;
+      const children = await renderChildren(ticket, {
+        ...context, width: width - 340, dense: true, size: 17,
+        color: primary ? COLORS.white : COLORS.ink,
+      });
+      cells.push(cell(children, width, {
+        columnSpan: span,
+        shading: fill(background),
+        margins: { top: 140, bottom: 80, left: 170, right: 170 },
+        borders: { top: { ...NO_BORDER, size: 12 }, bottom: { style: BorderStyle.SINGLE, size: 12, color: COLORS.white } },
+      }));
+      if (featured || cells.length === 3) {
+        rows.push(row(cells));
+        cells = [];
       }
-      rows.push(row(cells));
     }
     if (rows.length) result.push(table(rows, widths), spacer(8));
     const fineprint = body.querySelector(".package-fineprint");

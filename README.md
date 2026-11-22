@@ -96,6 +96,8 @@ and partnership terms reflect the latest supplied material; the original
 current sponsorship contract. Chapter links jump to the remaining corresponding
 appendices and name their destination page for printed copies while remaining
 clickable in digital copies; event details are presented directly in chapters 5–8.
+Page 22 contains the full theme and tagline, linked from page 3. The former
+partnership-invitation appendix and its detail link have been removed.
 The cover uses the supplied transparent `/road-to-43-branding.png` directly on
 the white sheet, without an added background.
 

@@ -475,13 +475,6 @@
     600 18px "Space Grotesk",
     sans-serif;
 }
-#appendix-budget .event-details th {
-  width: auto;
-}
-#appendix-budget .event-details td:last-child {
-  text-align: end;
-  white-space: nowrap;
-}
 #appendix-dialog .appendix-heading {
   min-height: 100px;
 }

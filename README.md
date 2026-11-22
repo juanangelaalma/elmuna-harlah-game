@@ -90,7 +90,7 @@ and the fallback illustration are available without JavaScript.
 ## Sponsorship proposal
 
 Open `/proposal.html` using “Proposal” on the heritage page. It contains
-**22 A4 portrait sheets**: 14 editorial chapters, an approval sheet, and 7 appendices. Event details
+**21 A4 portrait sheets**: 14 editorial chapters, an approval sheet, and 6 appendices. Event details
 and partnership terms reflect the latest supplied material; the original
 `Proposal_Sponsorship_Harlah_43 (1).md` is historical source material, not the
 current sponsorship contract. Chapter links jump to the remaining corresponding
@@ -98,6 +98,9 @@ appendices and name their destination page for printed copies while remaining
 clickable in digital copies; event details are presented directly in chapters 5–8.
 Page 17 contains the full theme and tagline immediately after the page-16 introduction,
 linked from page 3. The partnership-invitation appendix and its detail link are removed.
+The duplicate budget appendix and its page-9 link are removed; the complete event
+budget recap remains on page 9. Partnership terms retain the conditional videotron
+clause without the combined videotron/flower budget-line commentary.
 The cover uses the supplied transparent `/road-to-43-branding.png` directly on
 the white sheet, without an added background.
 
@@ -108,12 +111,12 @@ Premium badges are gold with navy text, regular badges sky-blue with navy text,
 donation badges white with a navy outline, and in-kind badges navy with white text.
 Category labels remain explicit for monochrome printing.
 The first six cards form a three-column, two-row grid; Barang & Jasa spans the
-third row and links to page 21. Mobile screens stack the cards. Word export uses
+third row and links to page 20. Mobile screens stack the cards. Word export uses
 the same grouping and preserves card colors independently of their position.
-A clickable page-19 reference identifies the four premium packages.
+A clickable page-18 reference identifies the four premium packages.
 Page 11 summarizes seven support options and distinguishes the Rp28,829,000 RAB,
 Rp2,480,000 planned income from the mosque youth organization's cash fund,
-and Rp26,349,000 funding gap. Pages 19–22 contain the
+and Rp26,349,000 funding gap. Pages 18–21 contain the
 premium benefit matrix, Sahabat Harlah matrix and Donatur category, in-kind and
 event-specific support, and partnership conditions. In-kind contributions use
 the highest qualifying package threshold; equipment loans use rental/service
@@ -153,7 +156,7 @@ restores the original image or empty area. Images are not uploaded to a server.
 If local storage is unavailable, images remain usable for the current visit and
 the status message explains this. Existing saved images retain their upload keys.
 
-“Cetak 22 halaman A4” waits for the illustrations, images, and fonts before opening
+“Cetak 21 halaman A4” waits for the illustrations, images, and fonts before opening
 the print dialog. Choose A4, 100% scale, no margins, and disable browser
 headers/footers. Print styles hide editing controls. The optional group photo
 on page 2 remains available for upload.
@@ -162,7 +165,7 @@ subsequent sheet with a page break, rather than forcing a trailing break. Printi
 uses explicit header/body/footer grid tracks and removes the site's main-container
 clipping so footers stay with their content instead of fragmenting onto another page.
 Shared rules apply to the proposal, editorial preview, and sponsorship agreement.
-The production PDF check verifies 22, 3, and 2 pages respectively at desktop/mobile
+The production PDF check verifies 21, 3, and 2 pages respectively at desktop/mobile
 viewport widths. Run it against a built preview with
 `PROPOSAL_PRINT_URL=http://127.0.0.1:4195 npm test -- tests/proposal-print.spec.js`.
 
@@ -186,7 +189,7 @@ use print/PDF when exact browser appearance is required.
 
 Open `/perjanjian-sponsorship.html` through “Surat perjanjian” in the proposal
 toolbar. It is a separate two-page A4 agreement without an agreement-number field,
-leaving the proposal at 22 pages. Page 1 covers identity and support category;
+leaving the proposal at 21 pages. Page 1 covers identity and support category;
 page 2 covers contributions, concise terms, validity, and signatures. Print it and fill it in by hand; fields and printed
 checkboxes are intentionally not interactive browser controls.
 

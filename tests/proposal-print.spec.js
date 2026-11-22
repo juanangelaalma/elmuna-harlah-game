@@ -4,7 +4,7 @@ import { test, expect } from "@playwright/test";
 test.use({ baseURL: process.env.PROPOSAL_PRINT_URL || "http://127.0.0.1:5173" });
 
 for (const document of [
-  { path: "/proposal.html", ready: "#print-proposal", pages: 22 },
+  { path: "/proposal.html", ready: "#print-proposal", pages: 21 },
   { path: "/proposal-preview.html", ready: "#print-proposal", pages: 3 },
   { path: "/perjanjian-sponsorship.html", ready: "#print-agreement", pages: 2 },
 ]) {

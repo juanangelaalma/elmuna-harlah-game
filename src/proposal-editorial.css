@@ -969,9 +969,13 @@
   gap: 10px;
 }
 .partnership-overview .ticket-category {
-  display: block;
-  margin-bottom: 3px;
+  display: inline-block;
+  padding: 3px 7px;
+  margin-bottom: 6px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
   font-size: 8px;
+  font-weight: 600;
   line-height: 1.4;
   letter-spacing: 0.8px;
 }

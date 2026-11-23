@@ -1,5 +1,31 @@
 import { test, expect } from "@playwright/test";
 
+test("all four event posters tilt independently and reset with reduced motion", async ({ page }) => {
+  await page.goto("/");
+  const cards = page.locator(".event-card");
+  for (const card of await cards.all()) {
+    const art = card.locator(".poster-art");
+    await art.hover({ position: { x: 30, y: 30 } });
+    await expect(art).toHaveCSS("--poster-shine", "1");
+    await expect(card.locator(".poster-surface")).not.toHaveCSS("transform", "matrix(1, 0, 0, 1, 0, 0)");
+    for (const other of await cards.all()) {
+      if (await other.getAttribute("data-event") !== await card.getAttribute("data-event")) {
+        await expect(other.locator(".poster-art")).not.toHaveCSS("--poster-shine", "1");
+      }
+    }
+    await page.mouse.move(0, 0);
+    await expect(art).not.toHaveCSS("--poster-shine", "1");
+  }
+  await cards.last().locator(".poster-art").hover();
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  for (const card of await cards.all()) {
+    const art = card.locator(".poster-art");
+    await art.hover({ position: { x: 30, y: 30 } });
+    await expect(art).not.toHaveCSS("--poster-shine", "1");
+    await expect(card.locator(".poster-surface")).toHaveCSS("transform", "matrix(1, 0, 0, 1, 0, 0)");
+  }
+});
+
 test("mobile reveals cards individually and respects motion preference changes", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");

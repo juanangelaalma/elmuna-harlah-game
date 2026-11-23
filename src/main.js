@@ -35,33 +35,34 @@ export function refreshIcons() {
 refreshIcons();
 initFestival();
 
-const dialogCard = document.querySelector(".event-card.talk");
-const posterArt = dialogCard.querySelector(".talk-art");
 const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
-function reflectPoster(event) {
-  if (reducedMotion.matches) return;
-  const rect = posterArt.getBoundingClientRect();
-  const x = Math.max(0, Math.min(1, (event.clientX - rect.left) / rect.width));
-  const y = Math.max(0, Math.min(1, (event.clientY - rect.top) / rect.height));
-  posterArt.style.setProperty("--poster-x", `${x * 100}%`);
-  posterArt.style.setProperty("--poster-y", `${y * 100}%`);
-  posterArt.style.setProperty("--poster-rotate-x", `${(0.5 - y) * 12}deg`);
-  posterArt.style.setProperty("--poster-rotate-y", `${(x - 0.5) * 12}deg`);
-  posterArt.style.setProperty("--poster-shine", "1");
-}
-function resetPoster() {
-  posterArt.removeAttribute("style");
-}
-dialogCard.addEventListener("pointermove", reflectPoster);
-dialogCard.addEventListener("pointerdown", reflectPoster);
-dialogCard.addEventListener("pointerleave", resetPoster);
-dialogCard.addEventListener("pointercancel", resetPoster);
-dialogCard.addEventListener("blur", resetPoster);
-dialogCard.addEventListener("click", resetPoster);
-dialogCard.addEventListener("pointerup", (event) => {
-  if (event.pointerType !== "mouse") resetPoster();
+document.querySelectorAll(".event-card").forEach((card) => {
+  const posterArt = card.querySelector(".poster-art");
+  function reflectPoster(event) {
+    if (reducedMotion.matches) return;
+    const rect = posterArt.getBoundingClientRect();
+    const x = Math.max(0, Math.min(1, (event.clientX - rect.left) / rect.width));
+    const y = Math.max(0, Math.min(1, (event.clientY - rect.top) / rect.height));
+    posterArt.style.setProperty("--poster-x", `${x * 100}%`);
+    posterArt.style.setProperty("--poster-y", `${y * 100}%`);
+    posterArt.style.setProperty("--poster-rotate-x", `${(0.5 - y) * 12}deg`);
+    posterArt.style.setProperty("--poster-rotate-y", `${(x - 0.5) * 12}deg`);
+    posterArt.style.setProperty("--poster-shine", "1");
+  }
+  function resetPoster() {
+    posterArt.removeAttribute("style");
+  }
+  card.addEventListener("pointermove", reflectPoster);
+  card.addEventListener("pointerdown", reflectPoster);
+  card.addEventListener("pointerleave", resetPoster);
+  card.addEventListener("pointercancel", resetPoster);
+  card.addEventListener("blur", resetPoster);
+  card.addEventListener("click", resetPoster);
+  card.addEventListener("pointerup", (event) => {
+    if (event.pointerType !== "mouse") resetPoster();
+  });
+  reducedMotion.addEventListener("change", resetPoster);
 });
-reducedMotion.addEventListener("change", resetPoster);
 
 let toastTimer;
 export function toast(message) {

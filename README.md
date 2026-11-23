@@ -24,6 +24,9 @@ link directly to the relevant proposal appendices. The four-poster carousel
 retains its pause, swipe, and reduced-motion behavior; Marble Rush retains three
 playable worlds. The countdown targets the finale at 19.00 WIB on 20 December 2026.
 The homepage Timeline link opens the proposal's current schedule.
+All four event cards share the same framed poster surface, pointer-driven tilt
+and reflective shine, plus a keyboard-focus highlight. Each effect resets on
+pointer exit, touch release, blur, or opening details; reduced motion disables tilt.
 
 ## Festival island
 

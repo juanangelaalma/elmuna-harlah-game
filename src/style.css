@@ -668,24 +668,12 @@ h2 {
   align-items: center;
   justify-content: center;
 }
-.event-art.talk-art {
-  flex: none;
-  height: auto;
-  aspect-ratio: 4 / 5;
-  margin: 18px 0 24px;
-  perspective: 900px;
-}
 .event-art.poster-art {
   flex: none;
   height: auto;
   aspect-ratio: 4 / 5;
   margin: 18px 0 24px;
-}
-.poster-art img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  border-radius: 9px;
+  perspective: 900px;
 }
 .poster-surface {
   position: relative;
@@ -746,7 +734,7 @@ h2 {
   opacity: calc(0.12 + var(--poster-shine, 0) * 0.5);
   transition: opacity 0.35s;
 }
-.talk:focus-visible .poster-surface:after {
+.event-card:focus-visible .poster-surface:after {
   opacity: 0.5;
 }
 .card-bottom {

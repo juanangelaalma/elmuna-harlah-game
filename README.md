@@ -210,6 +210,9 @@ checkboxes are intentionally not interactive browser controls.
 
 The agreement mirrors the proposal's seven support choices, including Barang & Jasa,
 with explicit regular-package checkboxes and a field for the in-kind benefit tier.
+Printed package choices use 16 px outlined squares with bold package names and
+aligned two-column rows; regular amounts have their own four-column choice row.
+These remain static marks for handwritten ticks, not interactive web inputs.
 Premium amounts use the final Rp28,829,000 RAB, not the Rp26,349,000 funding gap.
 It retains the proposal's existing exclusivity rule, conditional videotron provision,
 cash/in-kind valuation, official event names, and supplied BRI account.

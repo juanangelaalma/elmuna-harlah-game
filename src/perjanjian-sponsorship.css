@@ -72,10 +72,34 @@
 .agreement-options {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 6px 20px;
+  gap: 4px 20px;
   padding: 12px 14px;
   background: #edf5fc;
   border-radius: 5px;
+}
+.agreement-choice {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  min-height: 22px;
+}
+.agreement-check {
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+  margin-top: 1px;
+  border: 1px solid currentColor;
+  background: white;
+}
+.agreement-choice small {
+  font-size: 11px;
+  white-space: nowrap;
+}
+.agreement-regular-options {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px 16px;
+  margin-top: 6px;
 }
 .agreement-small,
 .agreement-paraph {
@@ -128,6 +152,9 @@
   .agreement-options,
   .agreement-signatures {
     grid-template-columns: 1fr;
+  }
+  .agreement-regular-options {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .agreement-small,
   .agreement-paraph {

@@ -1,16 +1,16 @@
 .agreement-page .editorial-body {
-  gap: 16px;
-  font-size: 13px;
-  line-height: 1.7;
+  gap: 12px;
+  font-size: 12px;
+  line-height: 1.6;
 }
 .agreement-page .agreement-heading h1 {
-  font-size: 40px;
+  font-size: 32px;
   line-height: 1.1;
   letter-spacing: -1.5px;
   margin-top: 10px;
 }
 .agreement-page .agreement-page-title {
-  font-size: 32px;
+  font-size: 28px;
   line-height: 1.15;
   letter-spacing: -1px;
 }
@@ -22,7 +22,7 @@
   margin-bottom: 7px;
 }
 .agreement-section > * + * {
-  margin-top: 7px;
+  margin-top: 6px;
 }
 .agreement-parties {
   display: grid;

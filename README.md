@@ -208,11 +208,20 @@ leaving the proposal at 21 pages. Page 1 covers identity and support category;
 page 2 covers contributions, concise terms, validity, and signatures. Print it and fill it in by hand; fields and printed
 checkboxes are intentionally not interactive browser controls.
 
-The agreement uses the six current categories, cash/in-kind valuation rules,
-official event names, and the supplied BRI account. Record the exact contribution,
-handover deadline, selected proposal version/pages, any benefit adjustments, and
-exclusive rights before signing. Attach the agreed benefit details, give each
-party an identical copy, and initial the first sheet.
+The agreement mirrors the proposal's seven support choices, including Barang & Jasa,
+with explicit regular-package checkboxes and a field for the in-kind benefit tier.
+Premium amounts use the final Rp28,829,000 RAB, not the Rp26,349,000 funding gap.
+It retains the proposal's existing exclusivity rule, conditional videotron provision,
+cash/in-kind valuation, official event names, and supplied BRI account.
+Record the exact contribution, handover deadline, proposal version/date, selected
+appendix pages, benefit schedules/adjustments, and exclusive rights before signing.
+Attach and initial pages 18 (premium) or 19 (regular), page 20 for in-kind/event-specific
+support, and page 21 for partnership terms. These attachments govern package quantities;
+the agreement summarizes shared-carousel versus dedicated-feed allocation, Collab Post
+usage, recap logos, facilities agreed before signing, and package-based reporting.
+No appreciation-panel benefit is offered. Give each party identical signed copies
+and attachments, and initial the first agreement sheet. Compact headings and spacing
+preserve two A4 pages, the handwritten identity/contribution fields, and signature space.
 
 “Cetak 2 halaman A4” waits for local fonts before opening the browser print dialog.
 Use the same A4, no-margin, 100%-scale settings as the proposal.

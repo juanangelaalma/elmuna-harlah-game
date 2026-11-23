@@ -13,6 +13,18 @@ npm run dev
 
 Vite listens on port 5173 and all network interfaces. `npm run build` creates a static production site in `dist/`; `npm run preview` serves that build.
 
+## Landing page content
+
+The homepage uses `proposal.html` as its editorial source: the official branding,
+“Merawat Warisan, Menguatkan Perjuangan” tagline, four current event posters and
+details, Harlah 41/42 documentation, seven support choices, funding recap, BRI
+account, and official channels. Both WhatsApp links reuse the proposal's exact
+message payload and QR assets. Premium/regular benefits and partnership conditions
+link directly to the relevant proposal appendices. The four-poster carousel
+retains its pause, swipe, and reduced-motion behavior; Marble Rush retains three
+playable worlds. The countdown targets the finale at 19.00 WIB on 20 December 2026.
+The homepage Timeline link opens the proposal's current schedule.
+
 ## Festival island
 
 The hero is a procedural Three.js festival diorama. Drag horizontally or use the
@@ -264,6 +276,15 @@ Tests cover event discovery without gameplay, calendar dates, a complete three-w
 
 ## Event information
 
-The confirmed schedule is **November 21, 2026** (Dialog interaktif), **November 21–December 13, 2026** (Lomba Creative Video; concept and rules still being planned), **December 13, 2026** (Lomba Badminton at GOR Botoran, Tulungagung), and **December 20, 2026** (Puncak Harlah ke-43, with a public religious gathering at Masjid Agung Al Munawwar Tulungagung). The full schedule lives in `timeline.html`. No backend or registration service is connected.
+The homepage and proposal present the planned schedule: **November 21, 2026 at 19.00 WIB**
+(Dialog Interaktif), **November 17–December 20, 2026** (Kompetisi Kreatif Video,
+free registration November 17–29, production November 29–December 13, submission
+deadline December 13, winner announcement December 17, awarding December 20),
+**December 13, 2026 at 08.00 WIB** (El Muna Fun Cup: mixed doubles, ages 15–30,
+16 teams, Rp30,000 per team), and **December 20, 2026 at 19.00 WIB**
+(Puncak Harlah ke-43: Gus Salsaladin and Hadrah El Muna at Masjid Agung
+Al Munawwar Tulungagung). The Fun Cup venue is not specified in the current
+proposal; visitors are directed to the committee rather than an assumed venue.
+No backend or registration service is connected.
 
 The site is self-contained: fonts are bundled locally and all 3D objects are procedural. WebGL2 is required for the interactive scenes; event information remains accessible without it. Reduced-motion preferences disable ambient page animations.

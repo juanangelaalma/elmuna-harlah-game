@@ -27,20 +27,21 @@ test("mobile reveals cards individually and respects motion preference changes",
   await expect(date).toHaveCSS("opacity", "1");
 });
 
-test("hero posters cycle through both upcoming events and honor reduced motion", async ({ page }) => {
+test("posters cycle through all four events and honor reduced motion", async ({ page }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/");
-  await expect(page.locator(".hero #hero-canvas")).toBeVisible();
   const poster = page.getByRole("img", { name: "Poster unggulan Dialog Interaktif" });
-  await expect.poll(() => poster.evaluate((image) => image.naturalWidth)).toBe(1200);
+  await poster.scrollIntoViewIfNeeded();
+  await expect.poll(() => poster.evaluate((image) => image.naturalWidth)).toBeGreaterThan(0);
   const front = page.locator('.swap-card[data-position="0"]');
   await expect(front.getByRole("img")).toBeVisible();
   const next = page.getByRole("button", { name: "Poster berikutnya" });
   await next.click();
-  await expect(front).toContainText("Turnamen");
-  await expect(front).toContainText("POSTER SEGERA HADIR");
+  await expect(front.getByRole("img", { name: "Poster unggulan El Muna Fun Cup" })).toBeVisible();
   await next.click();
-  await expect(front).toContainText("Video Kreatif");
+  await expect(front.getByRole("img", { name: "Poster unggulan Kompetisi Kreatif Video" })).toBeVisible();
+  await next.click();
+  await expect(front.getByRole("img", { name: "Poster unggulan Puncak Harlah ke-43" })).toBeVisible();
   await next.click();
   await expect(front.getByRole("img")).toBeVisible();
   await page.mouse.move(0, 0);
@@ -71,16 +72,16 @@ test("posters follow a drag, snap back on short drags, and swap on swipe or tap"
   const moved = await page.locator('.swap-card[data-position="0"]').boundingBox();
   expect(moved.x).toBeLessThan(box.x - 70);
   await page.mouse.up();
-  await expect(status).toContainText("Turnamen Bulu Tangkis");
+  await expect(status).toContainText("El Muna Fun Cup");
   await page.waitForTimeout(700);
   await page.mouse.click(x, y);
-  await expect(status).toContainText("Lomba Video Kreatif");
+  await expect(status).toContainText("Kompetisi Kreatif Video");
   await page.waitForTimeout(700);
   await page.mouse.move(x, y);
   await page.mouse.down();
   await page.mouse.move(x + 110, y, { steps: 8 });
   await page.mouse.up();
-  await expect(status).toContainText("Dialog Interaktif");
+  await expect(status).toContainText("Puncak Harlah ke-43");
 });
 
 test("events are accessible without playing and the celebration can be saved", async ({
@@ -96,7 +97,7 @@ test("events are accessible without playing and the celebration can be saved", a
     /Warisan\s+lintas\s+generasi\./,
   );
   await expect(page.locator(".hero-copy > p")).toContainText(
-    "Merawat Warisan, Menguatkan Generasi.",
+    "Merawat Warisan, Menguatkan Perjuangan.",
   );
   await expect(page.locator("#countdown")).toContainText("DETIK");
   const poster = page.getByRole("img", { name: /Poster Dialog Interaktif/ });
@@ -107,14 +108,15 @@ test("events are accessible without playing and the celebration can be saved", a
     .toBeGreaterThan(0);
   const names = [
     "Dialog Interaktif",
-    "Turnamen Bulu Tangkis",
-    "Lomba Video Kreatif",
+    "El Muna Fun Cup",
+    "Kompetisi Kreatif Video",
+    "Puncak Harlah ke-43",
   ];
   for (let i = 0; i < names.length; i++) {
-    await page.locator(`[data-event="${i}"]`).click();
+    await page.locator(`.event-card[data-event="${i}"]`).click();
     await expect(page.locator("#event-dialog h2")).toHaveText(names[i]);
     await expect(page.locator("#event-content")).toContainText(
-      "20 Desember 2026",
+      ["21 November 2026", "13 Desember 2026", "20 Desember 2026", "20 Desember 2026"][i],
     );
     await page.keyboard.press("Escape");
   }
@@ -132,7 +134,7 @@ test("events are accessible without playing and the celebration can be saved", a
     "SUMMARY:ROAD TO 43 — Stronger Through Generations",
   );
   expect(calendar).toContain(
-    "DESCRIPTION:Merawat Warisan, Menguatkan Generasi.",
+    "DESCRIPTION:Merawat Warisan\\, Menguatkan Perjuangan.",
   );
   for (const width of [320, 390, 1024]) {
     await page.setViewportSize({ width, height: 844 });
@@ -153,12 +155,12 @@ test("events are accessible without playing and the celebration can be saved", a
   }
 });
 
-test("event modal shows its poster without carrying it over to other events", async ({
+test("event modal shows the correct poster for each event", async ({
   page,
 }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
-  await page.locator('[data-event="0"]').click();
+  await page.locator('.event-card[data-event="0"]').click();
   const modal = page.locator("#event-dialog");
   const poster = modal.getByRole("img", { name: /Poster Dialog Interaktif/ });
   await expect(poster).toBeVisible();
@@ -171,9 +173,9 @@ test("event modal shows its poster without carrying it over to other events", as
   await expect(close).toBeInViewport();
   await close.click();
   await expect(modal).not.toBeVisible();
-  await page.locator('[data-event="1"]').click();
-  await expect(modal.getByRole("heading")).toHaveText("Turnamen Bulu Tangkis");
-  await expect(modal.getByRole("img")).toHaveCount(0);
+  await page.locator('.event-card[data-event="1"]').click();
+  await expect(modal.getByRole("heading")).toHaveText("El Muna Fun Cup");
+  await expect(modal.getByRole("img")).toHaveAttribute("src", "/images/el-muna-fun-cup-poster.jpg");
 });
 
 test("Marble Rush visits all three events, rewards the player, and resets for replay", async ({

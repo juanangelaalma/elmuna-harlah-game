@@ -23,7 +23,6 @@ message payload and QR assets. Premium/regular benefits and partnership conditio
 link directly to the relevant proposal appendices. The four-poster carousel
 retains its pause, swipe, and reduced-motion behavior; Marble Rush retains three
 playable worlds. The countdown targets the finale at 19.00 WIB on 20 December 2026.
-The homepage Timeline link opens the proposal's current schedule.
 All four event cards share the same framed poster surface, pointer-driven tilt
 and reflective shine, plus a keyboard-focus highlight. Each effect resets on
 pointer exit, touch release, blur, or opening details; reduced motion disables tilt.
@@ -40,12 +39,16 @@ The poster carousel is now in the play section.
 
 ## Timeline
 
-Open `/timeline.html` from the main navigation for the four-event schedule from
-November 21 to December 20, 2026. The page uses the existing design tokens and a
-procedural Three.js route. Four numbered buttons highlight the matching landmark;
-the scene renders only on selection or resize, with no autoplay. All event dates
-and descriptions remain available without JavaScript or WebGL. The production
-build includes both the landing page and timeline.
+The homepage's **Timeline** link jumps to `/#timeline`, the live schedule for
+17 November–20 December 2026. It uses the device clock in WIB (Asia/Jakarta).
+The date slider previews the calendar independently of the finale countdown;
+selecting a landmark changes only the event details. The route shows elapsed
+calendar time, not confirmation that an event took place.
+
+The Three.js map loads near the viewport and redraws only when needed. The
+schedule and details are still readable without JavaScript; if WebGL is
+unavailable, the live status and date preview still work. The original
+`/timeline.html` remains available as a separate route.
 
 ## El Muna Fun Cup poster
 

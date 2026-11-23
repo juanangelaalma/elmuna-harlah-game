@@ -1,4 +1,3 @@
-import "./style.css";
 import {
   createIcons,
   ArrowUpRight,
@@ -15,6 +14,7 @@ import {
 import { initFestival } from "./festival.js";
 import { initGame } from "./game.js";
 import { initMotion } from "./motion.js";
+import { initLiveJourney } from "./live-journey.js";
 
 export function refreshIcons() {
   createIcons({
@@ -34,6 +34,7 @@ export function refreshIcons() {
 }
 refreshIcons();
 initFestival();
+initLiveJourney(document.querySelector("#timeline"));
 
 const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
 document.querySelectorAll(".event-card").forEach((card) => {

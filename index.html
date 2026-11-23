@@ -9,6 +9,7 @@
       content="Harlah ke-43 Remaja Masjid Agung Al Munawwar Tulungagung. Rangkaian acara 17 November–20 Desember 2026: Dialog Interaktif, El Muna Fun Cup, Kompetisi Kreatif Video, dan pengajian umum. Merawat Warisan, Menguatkan Perjuangan."
     />
     <title>ROAD TO 43 — Stronger Through Generations</title>
+    <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
     <header class="header wrap">
@@ -17,7 +18,7 @@
       </a>
       <nav aria-label="Navigasi utama">
         <a class="active" href="#about">Perjalanan</a><a href="#events">Acara</a
-        ><a href="/proposal.html#timeline">Timeline</a><a href="#sponsorship">Sahabat Harlah</a><a href="#play">Marble Rush <span class="tiny-dot"></span></a>
+        ><a href="#timeline">Timeline</a><a href="#sponsorship">Sahabat Harlah</a><a href="#play">Marble Rush <span class="tiny-dot"></span></a>
       </nav>
       <a class="nav-cta" href="#celebration"
         >Ayo rayakan <i data-lucide="arrow-up-right"></i
@@ -190,6 +191,116 @@
             >Tak perlu main game. Langsung jelajahi saja.
             <i data-lucide="smile"></i
           ></span>
+        </div>
+      </section>
+
+      <section id="timeline" class="wrap section live-journey" aria-labelledby="journey-title">
+        <header class="section-heading">
+          <div>
+            <div class="kicker">PERJALANAN HARLAH KE-43</div>
+            <h2 id="journey-title">Perjalanan kita.<br />Hari demi hari.</h2>
+          </div>
+          <p class="journey-range-label">17 November–20 Desember 2026</p>
+        </header>
+
+        <div class="journey-status">
+          <div data-journey-status hidden>
+            <div class="journey-mode-line"><strong data-journey-mode></strong><time data-journey-date></time></div>
+            <p class="journey-phase" data-journey-phase></p>
+            <p data-journey-today hidden></p>
+            <p data-journey-next hidden></p>
+          </div>
+          <p data-journey-js-note>Status otomatis dan pratinjau tanggal memerlukan JavaScript.</p>
+          <p class="journey-note">Status berdasarkan jadwal dan tanggal perangkat (WIB), bukan konfirmasi pelaksanaan.</p>
+        </div>
+        <p class="journey-announcement" role="status" aria-atomic="true"></p>
+
+        <div class="journey-grid">
+          <div>
+            <div class="journey-map" data-journey-map hidden>
+              <h3>Peta perjalanan</h3>
+              <canvas aria-hidden="true" hidden></canvas>
+              <button type="button" class="journey-node" data-journey-node="video" aria-label="01 Kompetisi Kreatif Video" aria-pressed="true" hidden>01</button>
+              <button type="button" class="journey-node" data-journey-node="dialog" aria-label="02 Dialog Interaktif" aria-pressed="false" hidden>02</button>
+              <button type="button" class="journey-node" data-journey-node="cup" aria-label="03 El Muna Fun Cup" aria-pressed="false" hidden>03</button>
+              <button type="button" class="journey-node" data-journey-node="finale" aria-label="04 Puncak Harlah ke-43" aria-pressed="false" hidden>04</button>
+              <span class="journey-pin" data-journey-pin aria-hidden="true" hidden></span>
+              <p data-journey-fallback hidden>Visual 3D tidak tersedia. Status dan jadwal tetap dapat digunakan.</p>
+            </div>
+            <ul class="journey-legend" data-journey-legend hidden aria-label="Legenda peta">
+              <li data-kind="past">Jadwal telah lewat</li>
+              <li data-kind="current">Aktif / hari acara</li>
+              <li data-kind="upcoming">Mendatang</li>
+            </ul>
+            <div class="journey-preview">
+              <div class="journey-mode-line">
+                <label for="journey-date">Jelajahi tanggal</label>
+                <output for="journey-date" aria-live="off" hidden></output>
+              </div>
+              <input type="range" id="journey-date" name="journey_date" min="0" max="33" step="1" value="0" disabled />
+              <div class="journey-endpoints"><span>17 Nov</span><span>20 Des</span></div>
+              <button type="button" data-journey-reset disabled>Kembali ke hari ini</button>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="journey-list-heading">Jadwal rangkaian</h3>
+            <ol class="journey-events">
+              <li><button type="button" data-journey-select="video" aria-pressed="true" disabled>
+                <span class="journey-index" aria-hidden="true">01</span>
+                <span><strong>Kompetisi Kreatif Video</strong><small>17 November–20 Desember 2026</small></span>
+                <span class="journey-badge" hidden></span>
+              </button></li>
+              <li><button type="button" data-journey-select="dialog" aria-pressed="false" disabled>
+                <span class="journey-index" aria-hidden="true">02</span>
+                <span><strong>Dialog Interaktif</strong><small>21 November 2026</small></span>
+                <span class="journey-badge" hidden></span>
+              </button></li>
+              <li><button type="button" data-journey-select="cup" aria-pressed="false" disabled>
+                <span class="journey-index" aria-hidden="true">03</span>
+                <span><strong>El Muna Fun Cup</strong><small>13 Desember 2026</small></span>
+                <span class="journey-badge" hidden></span>
+              </button></li>
+              <li><button type="button" data-journey-select="finale" aria-pressed="false" disabled>
+                <span class="journey-index" aria-hidden="true">04</span>
+                <span><strong>Puncak Harlah ke-43</strong><small>20 Desember 2026</small></span>
+                <span class="journey-badge" hidden></span>
+              </button></li>
+            </ol>
+            <div class="journey-details">
+              <article data-journey-detail="video">
+                <h3>Kompetisi Kreatif Video</h3>
+                <p>Nyala Generasi, Abadi Menginspirasi</p>
+                <p><strong>Pendaftaran gratis</strong></p>
+                <dl>
+                  <div><dt>Pendaftaran</dt><dd>17–29 November 2026</dd></div>
+                  <div><dt>Produksi video</dt><dd>29 November–13 Desember 2026</dd></div>
+                  <div><dt>Batas pengumpulan</dt><dd>13 Desember 2026</dd></div>
+                  <div><dt>Pengumuman pemenang</dt><dd>17 Desember 2026</dd></div>
+                  <div><dt>Awarding</dt><dd>20 Desember 2026</dd></div>
+                </dl>
+                <a href="/proposal.html#video">Baca proposal Kompetisi Kreatif Video</a>
+              </article>
+              <article data-journey-detail="dialog">
+                <h3>Dialog Interaktif</h3>
+                <p>Ya Allah, ini arahnya ke mana, ya?</p>
+                <p><strong>19.00 WIB</strong></p>
+                <a href="/proposal.html#dialog">Baca proposal Dialog Interaktif</a>
+              </article>
+              <article data-journey-detail="cup">
+                <h3>El Muna Fun Cup</h3>
+                <p>Badminton ganda campuran usia 15–30 tahun · Rp30 ribu per tim</p>
+                <p><strong>08.00 WIB</strong></p>
+                <a href="/proposal.html#badminton">Baca proposal El Muna Fun Cup</a>
+              </article>
+              <article data-journey-detail="finale">
+                <h3>Puncak Harlah ke-43</h3>
+                <p>Pengajian umum bersama Gus Salsaladin dan Hadrah El Muna Tulungagung</p>
+                <p><strong>19.00 WIB–selesai</strong></p>
+                <a href="/proposal.html#finale">Baca proposal Puncak Harlah ke-43</a>
+              </article>
+            </div>
+          </div>
         </div>
       </section>
 

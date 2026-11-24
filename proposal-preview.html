@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="Preview arah editorial Sahabat Harlah: tiga komposisi A4 dengan objek Three.js, poster, dan pilihan kemitraan." />
+    <title>Preview Editorial — Sahabat Harlah</title>
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="/src/proposal.css" />
+    <link rel="stylesheet" href="/src/proposal-preview.css" />
+  </head>
+  <body class="proposal-page editorial-preview">
+    <a class="skip-link" href="#preview">Langsung ke preview</a>
+    <nav class="proposal-toolbar" aria-label="Navigasi preview editorial">
+      <a href="/proposal.html">← Proposal lengkap</a>
+      <div><a href="#preview-dialog">Dialog interaktif</a><a href="#preview-packages">Paket sponsor</a><button type="button" id="print-proposal" disabled>Cetak 3 halaman A4 <span aria-hidden="true">↗</span></button></div>
+      <p id="proposal-status" role="status">Menyiapkan preview. Tiga halaman ini adalah contoh arah visual, bukan pengganti proposal lengkap.</p>
+    </nav>
+    <noscript><p class="proposal-nojs">Preview tetap dapat dibaca dan dicetak melalui menu browser. Unggah gambar dan objek Three.js memerlukan JavaScript.</p></noscript>
+    <main id="preview" aria-label="Tiga halaman percontohan proposal editorial">
+      <section class="proposal-sheet editorial-cover" aria-labelledby="cover-heading">
+        <header class="editorial-masthead">
+          <a class="brand" href="/" aria-label="Beranda Road to 43"><span class="brand-flower" aria-hidden="true">✳</span><span>ROAD<br />TO <b>43</b></span></a>
+          <span>PROPOSAL SPONSORSHIP<br />REMAS AL MUNAWWAR / 2026</span>
+        </header>
+        <div class="editorial-body cover-composition">
+          <p class="editorial-kicker"><span aria-hidden="true"></span> STRONGER THROUGH GENERATIONS</p>
+          <h1 id="cover-heading">Sahabat<br /><em>Harlah.</em><span class="heading-spark" aria-hidden="true">✳</span></h1>
+          <div class="cover-sculpture editorial-scene" data-editorial-scene="heritage" aria-hidden="true">
+            <div class="scene-fallback heritage-fallback"><span class="fallback-orbit"></span><strong>43</strong><span class="fallback-plinth"></span></div>
+            <img class="scene-image" hidden alt="" />
+          </div>
+          <span class="cover-side-note" aria-hidden="true">SEBUAH PERJALANAN.<br />BERBAGAI GENERASI.</span>
+          <div class="cover-message"><p>Merawat warisan.<br /><em>Menguatkan perjuangan.</em></p><span>HARLAH KE-43<br />REMAJA MASJID AGUNG<br />AL MUNAWWAR TULUNGAGUNG</span></div>
+          <div class="cover-dateline"><span>21 NOVEMBER — 20 DESEMBER 2026</span><span>BERSAMA, TERUS BERTUMBUH <span aria-hidden="true">↗</span></span></div>
+        </div>
+        <footer class="editorial-footer"><span>SAHABAT HARLAH / STRONGER THROUGH GENERATIONS</span><span>01 / PREVIEW</span></footer>
+      </section>
+
+      <section class="proposal-sheet editorial-dialog" id="preview-dialog" aria-labelledby="dialog-heading">
+        <header class="editorial-masthead"><span>SAHABAT HARLAH</span><span>01 / RUANG WAWASAN</span></header>
+        <div class="editorial-body">
+          <div class="dialog-hero">
+            <p class="editorial-kicker"><span aria-hidden="true"></span> DIALOG INTERAKTIF</p>
+            <h2 id="dialog-heading">“Ya Allah,<br />ini arahnya<br /><em>ke mana, ya?”</em></h2>
+            <div class="dialog-sculpture editorial-scene" data-editorial-scene="dialog" aria-hidden="true">
+              <div class="scene-fallback dialog-fallback"><span class="fallback-mic"></span><span class="fallback-directions">↗</span></div>
+              <img class="scene-image" hidden alt="" />
+            </div>
+            <div class="dialog-date"><time datetime="2026-11-21">21 NOVEMBER 2026</time><span>19.00 WIB</span><span>SABTU MALAM</span></div>
+          </div>
+          <div class="dialog-feature">
+            <figure class="image-slot editorial-poster" data-upload="dialog-poster" data-fit="contain">
+              <img src="/images/dialog-interaktif-poster.png" alt="Poster Dialog Interaktif Ya Allah, Ini Arahnya ke Mana, Ya?" />
+              <div class="image-empty" hidden>Poster Dialog Interaktif</div>
+              <figcaption class="upload-controls"><label for="preview-poster">Ganti poster</label><input id="preview-poster" name="dialog_poster" type="file" accept="image/*" /><button type="button" data-remove hidden>Hapus gambar</button></figcaption>
+            </figure>
+            <div class="dialog-story">
+              <p class="feature-label">QUARTER LIFE CRISIS</p>
+              <h3>Mencari arah.<br /><em>Menemukan makna.</em></h3>
+              <p>Mencari jati diri di tengah standar dunia, kembali pada petunjuk Al-Qur’an. Ruang untuk berbagi keresahan, mendengar, dan menemukan perspektif baru.</p>
+              <div class="dialog-numbers"><div><strong>200</strong><span>target kehadiran<br />langsung</span></div><div><strong>Gratis</strong><span>snack & kopi<br />untuk peserta</span></div></div>
+              <div class="dialog-voices"><p><b>Dr. M. Syarif Thoyib, M.Pd.</b> & <b>Kak Juan</b><span>Narasumber</span></p><p><b>Kak Rosa</b><span>Moderator</span></p></div>
+            </div>
+          </div>
+          <div class="dialog-location"><span aria-hidden="true">↗</span><p><b>Area depan Masjid Agung Al Munawwar Tulungagung.</b><br />Terbuka untuk umum · Siaran langsung di YouTube El Muna TV</p></div>
+          <a class="editorial-detail-link" href="/proposal.html#appendix-dialog">Informasi kegiatan selengkapnya di lampiran <span aria-hidden="true">↗</span></a>
+        </div>
+        <footer class="editorial-footer"><span>WAWASAN YANG DIBAGI. GENERASI YANG MENGUAT.</span><span>02 / PREVIEW</span></footer>
+      </section>
+
+      <section class="proposal-sheet editorial-packages partnership-overview" id="preview-packages" aria-labelledby="packages-heading">
+        <header class="editorial-masthead"><span>SAHABAT HARLAH</span><span>02 / PILIHAN KEMITRAAN</span></header>
+        <div class="editorial-body">
+          <div class="packages-hero">
+            <p class="editorial-kicker"><span aria-hidden="true"></span> RUANG UNTUK BERKONTRIBUSI</p>
+            <h2 id="packages-heading">Beda dukungan.<br /><em>Satu gerakan.</em></h2>
+            <p>Dana, barang, atau jasa.<br />Pilih bentuk dukungan yang sesuai.</p>
+            <div class="packages-sculpture editorial-scene" data-editorial-scene="partnership" aria-hidden="true">
+              <div class="scene-fallback partnership-fallback"><span></span><span></span><span></span><span class="fallback-bridge"></span></div>
+              <img class="scene-image" hidden alt="" />
+            </div>
+          </div>
+          <dl class="partnership-funding" aria-label="Rencana pendanaan Harlah">
+            <div><dt>Total RAB</dt><dd>Rp28.829.000</dd></div>
+            <div><dt>Rencana pemasukan</dt><dd>Rp2.480.000</dd></div>
+            <div><dt>Kekurangan dana</dt><dd>Rp26.349.000</dd></div>
+          </dl>
+          <div class="package-tickets" aria-label="Enam kategori dukungan">
+            <article class="package-ticket ticket-primary"><div class="ticket-top"><h3>Tunggal</h3><span aria-hidden="true">✳</span></div><p class="ticket-price ticket-price-exact">Rp28.829.000</p><p>100% RAB · maksimal 1 sponsor</p><div class="ticket-bottom">Eksklusivitas melalui perjanjian khusus</div></article>
+            <article class="package-ticket ticket-gold"><div class="ticket-top"><h3>Utama</h3><span aria-hidden="true">↗</span></div><p class="ticket-price">Rp15 <span>juta</span></p><p>Sekitar 50% RAB · maksimal 2 sponsor</p><div class="ticket-bottom">Feed khusus 2 kali · video apresiasi</div></article>
+            <article class="package-ticket"><div class="ticket-top"><h3>Mitra</h3><span aria-hidden="true">↗</span></div><p class="ticket-price">Rp6 <span>juta</span></p><p>Sekitar 20% RAB · maksimal 5 sponsor</p><div class="ticket-bottom">Feed khusus 1 kali · IG Collab Post</div></article>
+            <article class="package-ticket"><div class="ticket-top"><h3>Pendukung</h3><span aria-hidden="true">↗</span></div><p class="ticket-price">Rp3 <span>juta</span></p><p>Sekitar 10% RAB</p><div class="ticket-bottom">Story & tag IG 1 kali · MC puncak 1 kali</div></article>
+            <article class="package-ticket"><div class="ticket-top"><h3>Sahabat Harlah</h3><span aria-hidden="true">↗</span></div><p class="ticket-price ticket-price-exact">Rp200 ribu–1 juta</p><p>Rp1 juta / Rp500 ribu / Rp300 ribu / Rp200 ribu</p><div class="ticket-bottom">Empat pilihan paket reguler</div></article>
+            <article class="package-ticket"><div class="ticket-top"><h3>Donatur</h3><span aria-hidden="true">↗</span></div><p class="ticket-price ticket-price-exact">Sukarela</p><p>Dukungan tanpa paket promosi</p><div class="ticket-bottom">Terbuka untuk berbagai bentuk bantuan</div></article>
+          </div>
+          <div class="package-fineprint">
+            <p>Nominal paket premium mengacu pada total RAB, bukan kekurangan dana. Benefit mengikuti paket dan kesepakatan, bukan jaminan jangkauan audiens.</p>
+            <nav class="partnership-links" aria-label="Rincian pilihan kemitraan">
+              <a class="editorial-detail-link" href="/proposal.html#appendix-packages">Benefit premium <span aria-hidden="true">↗</span></a>
+              <a class="editorial-detail-link" href="/proposal.html#appendix-sahabat">Benefit Sahabat Harlah <span aria-hidden="true">↗</span></a>
+              <a class="editorial-detail-link" href="/proposal.html#appendix-support">Dukungan barang/jasa <span aria-hidden="true">↗</span></a>
+              <a class="editorial-detail-link" href="/proposal.html#appendix-terms">Ketentuan kemitraan <span aria-hidden="true">↗</span></a>
+            </nav>
+          </div>
+        </div>
+        <footer class="editorial-footer"><span>MERAWAT WARISAN. MENGUATKAN PERJUANGAN.</span><span>03 / PREVIEW</span></footer>
+      </section>
+    </main>
+    <script type="module" src="/src/proposal-editorial.js"></script>
+  </body>
+</html>

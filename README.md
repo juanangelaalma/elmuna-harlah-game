@@ -13,6 +13,254 @@ npm run dev
 
 Vite listens on port 5173 and all network interfaces. `npm run build` creates a static production site in `dist/`; `npm run preview` serves that build.
 
+## Landing page content
+
+The homepage uses `proposal.html` as its editorial source: the official branding,
+“Merawat Warisan, Menguatkan Perjuangan” tagline, four current event posters and
+details, Harlah 41/42 documentation, seven support choices, funding recap, BRI
+account, and official channels. Both WhatsApp links reuse the proposal's exact
+message payload and QR assets. Premium/regular benefits and partnership conditions
+link directly to the relevant proposal appendices. The four-poster carousel
+retains its pause, swipe, and reduced-motion behavior; Marble Rush retains three
+playable worlds. The countdown targets the finale at 19.00 WIB on 20 December 2026.
+All four event cards share the same framed poster surface, pointer-driven tilt
+and reflective shine, plus a keyboard-focus highlight. Each effect resets on
+pointer exit, touch release, blur, or opening details; reduced motion disables tilt.
+
+## Festival island
+
+The hero is a procedural Three.js festival diorama. Drag horizontally or use the
+left, reset, and right buttons to change the view. Select the dialogue stage,
+badminton court, or video studio (or their keyboard-accessible labels) to open
+the existing event details. The gold 43 portal opens Marble Rush. Vertical touch
+scrolling remains available; there is no automatic island motion. Without WebGL,
+the same event and game buttons remain accessible with an explanatory message.
+The poster carousel is now in the play section.
+
+## Timeline
+
+The homepage's **Timeline** link jumps to `/#timeline`, the live schedule for
+17 November–20 December 2026. It uses the device clock in WIB (Asia/Jakarta).
+The date slider previews the calendar independently of the finale countdown;
+selecting a landmark changes only the event details. The route shows elapsed
+calendar time, not confirmation that an event took place.
+
+The Three.js map loads near the viewport and redraws only when needed. The
+schedule and details are still readable without JavaScript; if WebGL is
+unavailable, the live status and date preview still work. The original
+`/timeline.html` remains available as a separate route.
+
+## El Muna Fun Cup poster
+
+Open `/fun-cup.html` for the “Blue Smash” one-page A4 portrait badminton
+poster: a full-blue background, rising diagonal headline, layered court lines,
+outline anniversary watermark, motion trails, and translucent shadows.
+Two procedural Three.js rackets in sky/gold and a foreground shuttle provide
+depth and contrast. The artwork is rendered once as a 2160 × 1080 transparent
+image, then GPU resources are released. Gentle CSS motion can be paused and
+respects reduced motion; printing always uses the static image. An inline
+illustration remains available without WebGL or JavaScript. On narrow screens,
+event details reflow while retaining the diagonal visual direction.
+
+Enter an HTTP(S) registration URL and choose “Terapkan link” to update the
+poster's clickable registration link and printable address. The URL is saved
+only in this browser/origin; it does not update a shared registration service.
+Apply an empty field to remove it. Without a URL, the poster says registration
+will be announced rather than linking to a placeholder.
+
+“Download PDF” waits for the artwork and fonts, then opens the browser print
+dialog, like the proposal. Select Save as PDF, A4 portrait, 100% scale, no
+margins, background graphics enabled, and browser headers/footers disabled.
+The toolbar is omitted from the single-page output. Without JavaScript, use
+the browser's Print command.
+
+## MC cue cards
+
+Open `/qcard.html` from the homepage navigation for a physical MC cue card design.
+The blue anniversary front and ruled note back each measure 148 × 105 mm (A6
+landscape). The front pairs editorial typography with an extruded gold “43”,
+a sky orbit, and a white star built in Three.js. One temporary WebGL renderer
+creates a 1600 × 1600 transparent PNG and releases GPU resources; there is no
+animation loop. A CSS emblem stays visible without JavaScript or WebGL.
+“Cetak kartu” waits for the emblem, image decode, and fonts before opening the
+browser print dialog. Both faces fit on one A4 portrait sheet with cutting
+outlines. Use 100% scale, enable background graphics, and disable browser
+headers/footers. Cut the two faces and glue them back-to-back; this layout is not
+automatic duplex printing. The back stays blank for handwritten rundown notes,
+with six ruled lines. Browser printing also works without JavaScript.
+Like the proposal, printing uses a fixed physical A4 sheet with zero browser
+page margins, explicit mm/px card measurements, and decoded images/fonts before
+opening the print dialog. Responsive container-query sizing is screen-only;
+both A6 faces retain their dimensions when printing from mobile or desktop.
+The original 1600 × 1600 emblem PNG is embedded without a CSS-filter snapshot,
+and text remains selectable. Choose **Save as PDF** in the browser print dialog.
+
+## A4 heritage page
+
+Open `/warisan.html` through the homepage footer or the timeline's “Makna Harlah
+ke-43” link. It presents the anniversary message on a 210 × 297 mm portrait sheet.
+“Cetak A4” opens the browser print dialog; print CSS removes the toolbar and page
+shadow and requests A4 with zero page margins. On narrow screens the content
+reflows for reading. The decorative Three.js sculpture renders only on resize
+and before printing, with linked CSS rings when WebGL is unavailable. All text
+and the fallback illustration are available without JavaScript.
+
+## Sponsorship proposal
+
+Open `/proposal.html` using “Proposal” on the heritage page. It contains
+**21 A4 portrait sheets**: 14 editorial chapters, an approval sheet, and 6 appendices. Event details
+and partnership terms reflect the latest supplied material; the original
+`Proposal_Sponsorship_Harlah_43 (1).md` is historical source material, not the
+current sponsorship contract. Chapter links jump to the remaining corresponding
+appendices and name their destination page for printed copies while remaining
+clickable in digital copies; event details are presented directly in chapters 5–8.
+Page 17 contains the full theme and tagline immediately after the page-16 introduction,
+linked from page 3. The partnership-invitation appendix and its detail link are removed.
+The duplicate budget appendix and its page-9 link are removed; the complete event
+budget recap remains on page 9. Partnership terms retain the conditional videotron
+clause without the combined videotron/flower budget-line commentary.
+The cover uses the supplied transparent `/road-to-43-branding.png` directly on
+the white sheet, without an added background.
+
+All seven cards carry category badges: “PAKET PREMIUM” for Tunggal,
+Utama, Mitra, and Pendukung; “PAKET REGULER” for Sahabat Harlah;
+“DONASI SUKARELA” for Donatur; and “BARANG/JASA” for in-kind support.
+Premium badges are gold with navy text, regular badges sky-blue with navy text,
+donation badges white with a navy outline, and in-kind badges navy with white text.
+Category labels remain explicit for monochrome printing.
+The first six cards form a three-column, two-row grid; Barang & Jasa spans the
+third row and links to page 20. Mobile screens stack the cards. Word export uses
+the same grouping and preserves card colors independently of their position.
+A clickable page-18 reference identifies the four premium packages.
+Page 11 summarizes seven support options and distinguishes the Rp28,829,000 RAB,
+Rp2,480,000 planned income from the mosque youth organization's cash fund,
+and Rp26,349,000 funding gap. Pages 18–21 contain the
+premium benefit matrix, Sahabat Harlah matrix and Donatur category, in-kind and
+event-specific support, and partnership conditions. In-kind contributions use
+the highest qualifying package threshold; equipment loans use rental/service
+value, not purchase price. Sponsor Tunggal requires a separate exclusivity
+agreement. The two benefit matrices remain separate and horizontally scrollable
+on narrow screens, with all columns visible in A4 print.
+Page 14 replaces the step-by-step flow with two clickable WhatsApp QR codes for
+Iqtifa and Zahwa, each opening its own `wa.me` contact with the same editable
+Indonesian message template (name, organization, and selected package/in-kind support).
+The template and contact numbers are also printed as text. Local 616 × 616 px QR PNGs
+have four-module quiet zones and render at approximately 38 mm square on paper.
+The QR codes and contact-number links include the message; nothing is sent automatically.
+The visible message and both QR payloads use three paragraphs, separated by one
+blank line: greeting, sender identity and requested support, then the closing request.
+Sponsor slides mean one shared Instagram appreciation carousel,
+separate from dedicated feed posts; recap logos appear at the end of one recap video.
+Logo sizing follows package hierarchy with visually equivalent sizing within each tier.
+Sponsor Tunggal receives four MC mentions. Regular packages include one dedicated/shared
+Story with an account tag; the Rp500,000 package gets one shared MC acknowledgement.
+Booth/banner dimensions, location, equipment provider, and installation timing are
+agreed before the partnership is finalized. These details preserve the 21-page layout.
+
+Content follow-up:
+- [x] Updated the Instagram handle embedded in the dialog and El Muna Fun Cup
+  posters (pages 5–6) to `remas_elmuna.ta` using the supplied replacement posters.
+
+Pages 12–13 present Harlah 41 (2024) and Harlah 42 (2025), with event summaries,
+compact theme boxes, and uploadable documentation images replacing the fact lists.
+Both pages use the supplied 2400 × 900 px documentation collages as their default images.
+The archive uploads retain the `archive-2024` and `archive-2025` storage keys, so
+images previously saved in the same browser/origin are restored. Use landscape
+artwork around 2400 × 900 px (8:3); the printed image area is approximately
+184 × 69 mm. Images use contain fitting so text and artwork are not cropped.
+Locally generated QR PNGs link to the supplied Instagram reel/post without tracking
+parameters; QRs include four-module quiet zones for print scanning.
+
+Page 15 is the approval sheet dated 13 November 2026, placed after contact details
+and before the appendices. It has two signature rows: the event chair and secretary,
+then the mosque board chair and youth organization chair under “Mengetahui”.
+The signature areas are intentionally blank for handwritten signatures.
+
+Editorial chapters use relevant Three.js illustrations. Twelve procedural
+sculptures are rendered once each using a single temporary WebGL context; related
+appendices reuse their high-resolution PNGs. Dense partnership pages prioritize
+readable tables and copy. GPU resources are released after rendering. Images
+remain available in print, with local fallback illustrations when WebGL is
+unavailable. There is no animation loop.
+
+Use the seven image upload areas to add photos or posters. Images are included
+in printing and remembered in IndexedDB on the same browser/origin. “Hapus”
+restores the original image or empty area. Images are not uploaded to a server.
+If local storage is unavailable, images remain usable for the current visit and
+the status message explains this. Existing saved images retain their upload keys.
+
+“Cetak 21 halaman A4” waits for the illustrations, images, and fonts before opening
+the print dialog. Choose A4, 100% scale, no margins, and disable browser
+headers/footers. Print styles hide editing controls. The optional group photo
+on page 2 remains available for upload.
+Print sheets reserve 1 mm of A4 height for physical-unit rounding and start each
+subsequent sheet with a page break, rather than forcing a trailing break. Printing
+uses explicit header/body/footer grid tracks and removes the site's main-container
+clipping so footers stay with their content instead of fragmenting onto another page.
+Shared rules apply to the proposal, editorial preview, and sponsorship agreement.
+The production PDF check verifies 21, 3, and 2 pages respectively at desktop/mobile
+viewport widths. Run it against a built preview with
+`PROPOSAL_PRINT_URL=http://127.0.0.1:4195 npm test -- tests/proposal-print.spec.js`.
+
+“Unduh Word (.docx)” creates a local download named
+`Proposal-Sahabat-Harlah-43.docx`. The Word generator is loaded only when requested;
+opening the proposal or printing does not load the DOCX library. Export waits for
+saved-image restoration, pending uploads, image decoding, and fonts, then captures
+the current proposal including uploaded images. Print and image-editing controls
+are temporarily disabled during export and restored afterward, including on failure.
+No proposal content or images are sent to a server.
+
+The Word file preserves editable paragraphs and native tables rather than
+screenshots of pages, with embedded artwork and images. It uses Arial and Georgia
+italic for stable, widely available typography, fixed A4 sections, and bounded
+images/table widths. An earlier 23-page version was rendered in LibreOffice 25.2,
+with all benefit-table rows preserved and both archive QR codes readable.
+Line wrapping and spacing can still vary between Word applications or after edits;
+use print/PDF when exact browser appearance is required.
+
+### Sponsorship agreement
+
+Open `/perjanjian-sponsorship.html` through “Surat perjanjian” in the proposal
+toolbar. It is a separate two-page A4 agreement without an agreement-number field,
+leaving the proposal at 21 pages. Page 1 covers identity and support category;
+page 2 covers contributions, concise terms, validity, and signatures. Print it and fill it in by hand; fields and printed
+checkboxes are intentionally not interactive browser controls.
+
+The agreement mirrors the proposal's seven support choices, including Barang & Jasa,
+with explicit regular-package checkboxes and a field for the in-kind benefit tier.
+Printed package choices use 16 px outlined squares with bold package names and
+aligned two-column rows; regular amounts have their own four-column choice row.
+These remain static marks for handwritten ticks, not interactive web inputs.
+Premium amounts use the final Rp28,829,000 RAB, not the Rp26,349,000 funding gap.
+It retains the proposal's existing exclusivity rule, conditional videotron provision,
+cash/in-kind valuation, official event names, and supplied BRI account.
+Record the exact contribution, handover deadline, proposal version/date, selected
+appendix pages, benefit schedules/adjustments, and exclusive rights before signing.
+Attach and initial pages 18 (premium) or 19 (regular), page 20 for in-kind/event-specific
+support, and page 21 for partnership terms. These attachments govern package quantities;
+the agreement summarizes shared-carousel versus dedicated-feed allocation, Collab Post
+usage, recap logos, facilities agreed before signing, and package-based reporting.
+No appreciation-panel benefit is offered. Give each party identical signed copies
+and attachments, and initial the first agreement sheet. Compact headings and spacing
+preserve two A4 pages, the handwritten identity/contribution fields, and signature space.
+
+“Cetak 2 halaman A4” waits for local fonts before opening the browser print dialog.
+Use the same A4, no-margin, 100%-scale settings as the proposal.
+
+### Editorial preview
+
+`/proposal-preview.html` contains three A4 design samples: cover, Dialog
+Interaktif, and the current six-category sponsorship overview. It uses the same
+rendering, image storage, and print implementation as the complete editorial
+proposal, including the same saved dialogue poster. Its detail links point to
+the complete proposal's premium, regular, in-kind, and terms appendices.
+
+Each sample has a distinct Three.js sculpture. One temporary WebGL renderer
+creates three high-resolution PNGs, then releases GPU resources; these images
+remain visible in print without depending on live WebGL contexts. Local fallback
+illustrations are shown when WebGL is unavailable. Use “Cetak 3 halaman A4” to
+print the samples, not the complete proposal.
+
 ## Marble Rush
 
 - Steer with **← / →** or **A / D**; jump with **Space / ↑ / W**.
@@ -34,6 +282,15 @@ Tests cover event discovery without gameplay, calendar dates, a complete three-w
 
 ## Event information
 
-The grand celebration is **December 20, 2026**. Other event dates, venue, speakers, tournament rules, submission requirements, and registration links are deliberately not fabricated. Add confirmed information to the event records in `src/main.js` before launch. No backend or registration service is connected.
+The homepage and proposal present the planned schedule: **November 21, 2026 at 19.00 WIB**
+(Dialog Interaktif), **November 17–December 20, 2026** (Kompetisi Kreatif Video,
+free registration November 17–29, production November 29–December 13, submission
+deadline December 13, winner announcement December 17, awarding December 20),
+**December 13, 2026 at 08.00 WIB** (El Muna Fun Cup: mixed doubles, ages 15–30,
+16 teams, Rp30,000 per team), and **December 20, 2026 at 19.00 WIB**
+(Puncak Harlah ke-43: Gus Salsaladin and Hadrah El Muna at Masjid Agung
+Al Munawwar Tulungagung). The Fun Cup venue is not specified in the current
+proposal; visitors are directed to the committee rather than an assumed venue.
+No backend or registration service is connected.
 
 The site is self-contained: fonts are bundled locally and all 3D objects are procedural. WebGL2 is required for the interactive scenes; event information remains accessible without it. Reduced-motion preferences disable ambient page animations.

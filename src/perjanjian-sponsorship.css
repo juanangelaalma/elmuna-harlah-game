@@ -1,0 +1,163 @@
+.agreement-page .editorial-body {
+  gap: 12px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.agreement-page .agreement-heading h1 {
+  font-size: 32px;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  margin-top: 10px;
+}
+.agreement-page .agreement-page-title {
+  font-size: 28px;
+  line-height: 1.15;
+  letter-spacing: -1px;
+}
+.agreement-page .agreement-section h2,
+.agreement-page .agreement-parties h2 {
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: -.3px;
+  margin-bottom: 7px;
+}
+.agreement-section > * + * {
+  margin-top: 6px;
+}
+.agreement-parties {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px;
+}
+.identity-fields {
+  margin: 0 0 10px;
+}
+.identity-fields > div {
+  display: grid;
+  grid-template-columns: 82px minmax(0, 1fr);
+  gap: 10px;
+  margin-bottom: 5px;
+}
+.identity-fields dt,
+.identity-fields dd {
+  margin: 0;
+  min-height: 30px;
+}
+.identity-fields dd {
+  border-bottom: 1px dotted #53616e;
+}
+.agreement-line {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-height: 25px;
+}
+.write-line {
+  flex: 1;
+  min-width: 80px;
+  min-height: 18px;
+  border-bottom: 1px dotted #53616e;
+}
+.write-inline {
+  display: inline-block;
+  min-width: 72px;
+  min-height: 18px;
+  border-bottom: 1px dotted #53616e;
+}
+.write-row {
+  min-height: 25px;
+  border-bottom: 1px dotted #53616e;
+}
+.agreement-options {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 4px 20px;
+  padding: 12px 14px;
+  background: #edf5fc;
+  border-radius: 5px;
+}
+.agreement-choice {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  min-height: 22px;
+}
+.agreement-check {
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+  margin-top: 1px;
+  border: 1px solid currentColor;
+  background: white;
+}
+.agreement-choice small {
+  font-size: 11px;
+  white-space: nowrap;
+}
+.agreement-regular-options {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px 16px;
+  margin-top: 6px;
+}
+.agreement-small,
+.agreement-paraph {
+  font-size: 11px;
+  line-height: 1.6;
+}
+.agreement-paraph {
+  margin-top: auto !important;
+  text-align: end;
+}
+.agreement-terms {
+  padding-inline-start: 18px;
+  margin-block: 8px 0;
+}
+.agreement-terms li + li {
+  margin-top: 5px;
+}
+.agreement-signatures {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 32px;
+  text-align: center;
+  break-inside: avoid;
+}
+.agreement-signatures .agreement-sign-name {
+  padding-top: 65px;
+  overflow-wrap: anywhere;
+}
+.agreement-signatures > div > p:last-child {
+  font-size: 10px;
+}
+@media screen and (max-width: 540px) {
+  .agreement-page .proposal-sheet {
+    width: 100%;
+    height: auto;
+    min-height: 297mm;
+    padding: 24px;
+  }
+  .agreement-page .proposal-toolbar {
+    padding-inline: 24px;
+  }
+  .agreement-page .editorial-body {
+    font-size: 14px;
+    gap: 20px;
+  }
+  .agreement-page .agreement-heading h1 {
+    font-size: 34px;
+  }
+  .agreement-parties,
+  .agreement-options,
+  .agreement-signatures {
+    grid-template-columns: 1fr;
+  }
+  .agreement-regular-options {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .agreement-small,
+  .agreement-paraph {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#3f6bf3" />
+    <meta name="description" content="El Muna Fun Cup — badminton ganda campuran, 13 Desember 2026 di GOR Botoran. Usia 15–30 tahun. HTM 30K." />
+    <title>El Muna Fun Cup — ROAD TO 43</title>
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="/src/fun-cup.css" />
+  </head>
+  <body class="cup-page">
+    <a class="cup-skip" href="#poster">Lewati ke poster</a>
+    <div class="cup-tools">
+      <nav aria-label="Navigasi poster"><a href="/">← Beranda</a><a href="/proposal.html">Proposal ↗</a></nav>
+      <div class="cup-actions"><button id="motion-toggle" type="button" aria-pressed="false" hidden>Jeda animasi</button><button id="download-pdf" type="button" disabled>Download PDF <span aria-hidden="true">↗</span></button></div>
+      <form id="registration-form">
+        <label for="registration-url">Link pendaftaran</label>
+        <div class="cup-link-row"><input id="registration-url" name="registration-url" type="url" placeholder="https://…" aria-describedby="link-help" /><button type="submit">Terapkan link ↗</button></div>
+        <p id="link-help">Isi alamat pendaftaran agar tautannya ikut tampil di poster dan PDF. Kosongkan untuk menghapus.</p>
+      </form>
+      <p id="cup-status" role="status">Menyiapkan ilustrasi. PDF menggunakan dialog cetak: pilih Simpan sebagai PDF, A4, skala 100%, tanpa margin dan header/footer.</p>
+    </div>
+    <main id="poster" class="cup-poster" aria-labelledby="cup-title">
+      <div class="cup-watermark" aria-hidden="true">43</div>
+      <header class="cup-masthead"><a href="/" class="cup-brand"><span aria-hidden="true">✳</span><span>ROAD<br />TO <b>43</b></span></a><p>HARLAH KE-43<br />REMAS AL MUNAWWAR / 2026</p></header>
+      <section class="cup-headline" aria-label="Nama dan kategori pertandingan">
+        <p class="cup-eyebrow"><span aria-hidden="true">●</span> BADMINTON / 2026</p>
+        <h1 id="cup-title"><span>EL MUNA</span><strong>FUN CUP<span aria-hidden="true">✳</span></strong></h1>
+        <div class="cup-category"><span>GANDA CAMPURAN</span><em>Find your perfect match.</em></div>
+      </section>
+      <div class="cup-art">
+        <div class="cup-court" aria-hidden="true"><span></span><span></span></div>
+        <div class="cup-speed" aria-hidden="true"><span></span><span></span><span></span></div>
+        <svg class="cup-fallback" aria-hidden="true" viewBox="0 0 720 420" fill="none"><g transform="rotate(42 310 190)"><ellipse cx="310" cy="155" rx="83" ry="112" stroke="#a7def3" stroke-width="16"/><path d="M270 60V249M290 49V262M310 43V267M330 49V262M350 60V249M231 115H389M228 140H392M228 165H392M234 190H386M249 215H371" stroke="#ffffff" stroke-width="2"/><path d="M310 273V340" stroke="#ffbe35" stroke-width="12"/><path d="M310 332V400" stroke="#14213d" stroke-width="24"/></g><g transform="translate(560 110) rotate(-40)"><path d="M-47-70L-14 10H14L47-70M-24-70L-7 10M0-75V10M24-70L7 10" stroke="#ffffff" stroke-width="5"/><path d="M-14 10Q0 50 14 10" fill="#ffbe35"/></g></svg>
+        <img id="cup-sculpture" alt="" hidden />
+        <span class="cup-art-note" aria-hidden="true">TWO PLAYERS.<br />ONE TEAM.<span>↗</span></span>
+        <div class="cup-price"><span>HTM</span><b>30<span>K</span></b></div>
+        <span class="cup-spark" aria-hidden="true">✳</span><span class="cup-spark-small" aria-hidden="true">✦</span>
+      </div>
+      <section class="cup-event" aria-label="Waktu, lokasi, dan syarat">
+        <div class="cup-date"><span>MINGGU</span><p>13 DESEMBER<b>2026<span aria-hidden="true">↗</span></b></p></div>
+        <div class="cup-location"><span>MEET US AT</span><p>GOR BOTORAN</p><div class="cup-age">USIA 15–30 TAHUN</div></div>
+      </section>
+      <section class="cup-prizes" aria-labelledby="prize-title"><div><h2 id="prize-title">MAIN BARENG.<br /><em>Menang bareng.</em></h2></div><div><span>HADIAH</span><p>Uang pembinaan,<br />piala &amp; sertifikat.</p></div></section>
+      <section class="cup-register" aria-label="Pendaftaran"><a id="registration-link" hidden><span>PENDAFTARAN MELALUI LINK</span><b aria-hidden="true">↗</b></a><div id="registration-placeholder"><span>PENDAFTARAN MELALUI LINK</span><b aria-hidden="true">↗</b></div><p id="registration-address">Link pendaftaran akan diumumkan.</p></section>
+      <footer class="cup-footer"><span>MERAWAT WARISAN. MENGUATKAN PERJUANGAN.</span><span>EL MUNA FUN CUP <b>43</b></span></footer>
+    </main>
+    <noscript><p class="cup-noscript">Aktifkan JavaScript untuk mengatur link dan memuat objek 3D. Poster tetap bisa dicetak melalui menu cetak browser.</p></noscript>
+    <script type="module" src="/src/fun-cup.js"></script>
+  </body>
+</html>

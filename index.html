@@ -6,19 +6,19 @@
     <meta name="theme-color" content="#ffffff" />
     <meta
       name="description"
-      content="Merawat Warisan, Menguatkan Generasi. Rayakan 43 tahun Remas Al Munawwar dengan tema Stronger Through Generations pada 20 Desember 2026."
+      content="Harlah ke-43 Remaja Masjid Agung Al Munawwar Tulungagung. Rangkaian acara 17 November–20 Desember 2026: Dialog Interaktif, El Muna Fun Cup, Kompetisi Kreatif Video, dan pengajian umum. Merawat Warisan, Menguatkan Perjuangan."
     />
     <title>ROAD TO 43 — Stronger Through Generations</title>
+    <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
     <header class="header wrap">
-      <a class="brand" href="#" aria-label="Beranda Road to 43"
-        ><span class="brand-flower">✳</span
-        ><span>ROAD<br />TO <b>43</b><span class="brand-dot">®</span></span></a
-      >
+      <a class="landing-brand" href="#" aria-label="Beranda Road to 43">
+        <img src="/road-to-43-branding.png" width="1716" height="278" alt="Remaja Masjid Agung Al Munawwar Tulungagung — Harlah ke-43" />
+      </a>
       <nav aria-label="Navigasi utama">
         <a class="active" href="#about">Perjalanan</a><a href="#events">Acara</a
-        ><a href="#play">Marble Rush <span class="tiny-dot"></span></a>
+        ><a href="#timeline">Timeline</a><a href="#sponsorship">Sahabat Harlah</a><a href="#play">Marble Rush <span class="tiny-dot"></span></a>
       </nav>
       <a class="nav-cta" href="#celebration"
         >Ayo rayakan <i data-lucide="arrow-up-right"></i
@@ -41,9 +41,9 @@
             ></span>
           </h1>
           <p>
-            <strong>Merawat Warisan, Menguatkan Generasi.</strong><br />43 tahun
-            kebaikan yang terus diteruskan—dari satu generasi ke generasi
-            berikutnya.
+            <strong>Merawat Warisan, Menguatkan Perjuangan.</strong><br />
+            43 tahun Remaja Masjid Agung Al Munawwar Tulungagung menjadi
+            ruang tumbuh lintas generasi. Rangkaian Harlah: 17 November–20 Desember 2026.
           </p>
           <div class="hero-actions">
             <button class="button blue" data-start>
@@ -58,29 +58,24 @@
             ><span>Satu warisan. Banyak generasi. Terus menguatkan.</span>
           </div>
         </div>
-        <div class="hero-posters" role="region" aria-roledescription="karusel" aria-label="Poster tiga acara">
-          <div class="edition">TIGA ACARA <span>↗</span> SATU SEMANGAT</div>
-          <div class="poster-stack">
-            <div class="swap-card" data-position="0">
-              <img src="/images/dialog-interaktif-poster.png" alt="Poster unggulan Dialog Interaktif" width="1200" height="1500" draggable="false" />
-            </div>
-            <div class="swap-card poster-placeholder sport" data-position="1">
-              <span class="placeholder-top">ROAD TO 43 <span>02 / SPORT</span></span>
-              <span class="placeholder-symbol" aria-hidden="true">✳</span>
-              <strong>Turnamen<br />Bulu Tangkis</strong>
-              <span class="placeholder-note">POSTER SEGERA HADIR ↗</span>
-            </div>
-            <div class="swap-card poster-placeholder creative" data-position="2">
-              <span class="placeholder-top">ROAD TO 43 <span>03 / KREASI</span></span>
-              <span class="placeholder-symbol" aria-hidden="true">✷</span>
-              <strong>Lomba<br />Video Kreatif</strong>
-              <span class="placeholder-note">POSTER SEGERA HADIR ↗</span>
+        <div class="festival" role="region" aria-label="Pulau festival Road to 43">
+          <div class="festival-heading"><span>ROAD TO 43</span><strong>Satu pulau. Banyak cerita.</strong></div>
+          <div class="festival-scene">
+            <canvas id="hero-canvas" aria-label="Diorama pulau festival. Geser horizontal untuk memutar, atau gunakan tombol putar." aria-describedby="festival-help"></canvas>
+            <div class="festival-hotspots">
+              <button class="festival-hotspot" data-event="0"><span>01</span> Dialog Interaktif</button>
+              <button class="festival-hotspot" data-event="1"><span>02</span> El Muna Fun Cup</button>
+              <button class="festival-hotspot" data-event="2"><span>03</span> Kompetisi Kreatif Video</button>
+              <button class="festival-hotspot festival-portal" data-start>Masuk portal 43 <span>↗</span></button>
             </div>
           </div>
-          <div class="poster-controls">
-            <span id="poster-status" aria-live="polite">01 / Dialog Interaktif</span>
-            <button type="button" id="poster-pause" aria-label="Jeda pergantian poster" aria-pressed="false">Ⅱ</button>
-            <button type="button" id="poster-next" aria-label="Poster berikutnya">↗</button>
+          <div class="festival-controls">
+            <p id="festival-help" role="status">Menyiapkan pulau festival…</p>
+            <div>
+              <button type="button" id="island-left" aria-label="Putar pulau ke kiri">←</button>
+              <button type="button" id="island-reset" aria-label="Kembalikan sudut awal pulau">↺</button>
+              <button type="button" id="island-right" aria-label="Putar pulau ke kanan">→</button>
+            </div>
           </div>
         </div>
         <div class="hero-bottom">
@@ -103,11 +98,11 @@
         <div class="section-heading">
           <div>
             <div class="eyebrow">01 / TEMUKAN TEMAN SEPERJALANAN</div>
-            <h2>Tiga acara.<br /><span>Lintas generasi.</span></h2>
+            <h2>Empat ruang.<br /><span>Satu perjalanan.</span></h2>
           </div>
           <p>
-            Dialog, sportivitas, dan kreativitas jadi ruang untuk berbagi
-            cerita,<br />saling belajar, dan menguatkan satu sama lain.
+            Wawasan, sportivitas, kreativitas, dan nilai keagamaan.<br />
+            Rencana rangkaian Harlah ke-43 · 17 November–20 Desember 2026.
           </p>
         </div>
         <div class="event-grid">
@@ -115,11 +110,11 @@
             <div class="card-top">
               <span>01 / MARI TERHUBUNG</span><span class="round-arrow">↗</span>
             </div>
-            <div class="event-art talk-art">
+            <div class="event-art poster-art">
               <div class="poster-surface">
                 <img
-                  src="/images/dialog-interaktif-poster.png"
-                  alt="Poster Dialog Interaktif: Ya Allah, Ini Arahnya Ke Mana, Ya? Sabtu, 21 November 2026, pukul 19.00 di Masjid Agung Al Munawwar Tulungagung."
+                  src="/images/dialog-interaktif-poster.jpg"
+                  alt="Poster Dialog Interaktif “Ya Allah, ini arahnya ke mana, ya?” — 21 November 2026, 19.00 WIB"
                   width="1200"
                   height="1500"
                   loading="lazy"
@@ -131,7 +126,7 @@
             <div class="card-bottom">
               <span class="event-type">CERITA BERTEMU. NILAI DITERUSKAN.</span>
               <h3>Dialog Interaktif</h3>
-              <p>Ruang untuk saling mendengar dan belajar lintas generasi.</p>
+              <p>“Ya Allah, ini arahnya ke mana, ya?” · 21 November 2026 · 19.00 WIB. Gratis snack & kopi.</p>
               <span class="card-link"
                 >Temukan inspirasimu <i data-lucide="arrow-up-right"></i
               ></span>
@@ -142,15 +137,15 @@
               <span>02 / TUNJUKKAN SEMANGATMU</span
               ><span class="round-arrow">↗</span>
             </div>
-            <div class="event-art sport-art">
-              <div class="racket"><div></div></div>
-              <div class="shuttle">✺</div>
-              <span class="sport-spark">✳</span>
+            <div class="event-art poster-art">
+              <div class="poster-surface">
+                <img src="/images/el-muna-fun-cup-poster.jpg" alt="Poster El Muna Fun Cup — badminton ganda campuran, 13 Desember 2026" loading="lazy" decoding="async" draggable="false" />
+              </div>
             </div>
             <div class="card-bottom">
               <span class="event-type">SEMANGAT BERSAMA. SPORTIVITAS UTAMA.</span>
-              <h3>Turnamen Bulu Tangkis</h3>
-              <p>Bertanding sportif, saling mendukung, dan tumbuh bersama.</p>
+              <h3>El Muna Fun Cup</h3>
+              <p>13 Desember 2026 · 08.00 WIB. Ganda campuran usia 15–30 tahun · Rp30 ribu per tim.</p>
               <span class="card-link"
                 >Siap turun ke lapangan? <i data-lucide="arrow-up-right"></i
               ></span>
@@ -161,20 +156,32 @@
               <span>03 / WUJUDKAN KREASIMU</span
               ><span class="round-arrow">↗</span>
             </div>
-            <div class="event-art creative-art">
-              <div class="video-frame">
-                <span>REKAM <b>●</b></span
-                ><strong>▶</strong><small>IDE BESARMU BERIKUTNYA.</small>
+            <div class="event-art poster-art">
+              <div class="poster-surface">
+                <img src="/images/kompetisi-video-kreatif-poster.png" alt="Poster Kompetisi Kreatif Video — Nyala Generasi, Abadi Menginspirasi" loading="lazy" decoding="async" draggable="false" />
               </div>
-              <span class="video-star">✷</span>
             </div>
             <div class="card-bottom">
               <span class="event-type">CERITAKAN NILAI BAIK DENGAN CARA BARUMU.</span>
-              <h3>Lomba Video Kreatif</h3>
-              <p>Kisah lintas generasi, dikemas lewat sudut pandangmu.</p>
+              <h3>Kompetisi Kreatif Video</h3>
+              <p>Nyala Generasi, Abadi Menginspirasi. Pendaftaran gratis · 17–29 November 2026.</p>
               <span class="card-link"
                 >Bebaskan kreativitasmu <i data-lucide="arrow-up-right"></i
               ></span>
+            </div>
+          </button>
+          <button class="event-card talk" data-event="3">
+            <div class="card-top"><span>04 / PUNCAK HARLAH KE-43</span><span class="round-arrow">↗</span></div>
+            <div class="event-art poster-art">
+              <div class="poster-surface">
+                <img src="/images/puncak-harlah-poster.jpg" alt="Poster pengajian umum Puncak Harlah ke-43 bersama Gus Salsaladin dan Hadrah El Muna" loading="lazy" decoding="async" draggable="false" />
+              </div>
+            </div>
+            <div class="card-bottom">
+              <span class="event-type">PENGAJIAN UMUM · GRATIS</span>
+              <h3>Puncak Harlah ke-43</h3>
+              <p>20 Desember 2026 · 19.00 WIB–selesai. Masjid Agung Al Munawwar Tulungagung.</p>
+              <span class="card-link">Lihat pengajian umum <i data-lucide="arrow-up-right"></i></span>
             </div>
           </button>
         </div>
@@ -187,21 +194,139 @@
         </div>
       </section>
 
+      <section id="timeline" class="wrap section live-journey" aria-labelledby="journey-title">
+        <header class="section-heading">
+          <div>
+            <div class="kicker">PERJALANAN HARLAH KE-43</div>
+            <h2 id="journey-title">Perjalanan kita.<br />Hari demi hari.</h2>
+          </div>
+          <p class="journey-range-label">17 November–20 Desember 2026</p>
+        </header>
+
+        <div class="journey-status">
+          <div data-journey-status hidden>
+            <div class="journey-mode-line"><strong data-journey-mode></strong><time data-journey-date></time></div>
+            <p class="journey-phase" data-journey-phase></p>
+            <p data-journey-today hidden></p>
+            <p data-journey-next hidden></p>
+          </div>
+          <p data-journey-js-note>Status otomatis dan pratinjau tanggal memerlukan JavaScript.</p>
+          <p class="journey-note">Status berdasarkan jadwal dan tanggal perangkat (WIB), bukan konfirmasi pelaksanaan.</p>
+        </div>
+        <p class="journey-announcement" role="status" aria-atomic="true"></p>
+
+        <div class="journey-grid">
+          <div>
+            <div class="journey-map" data-journey-map hidden>
+              <h3>Peta perjalanan</h3>
+              <canvas aria-hidden="true" hidden></canvas>
+              <button type="button" class="journey-node" data-journey-node="video" aria-label="01 Kompetisi Kreatif Video" aria-pressed="true" hidden>01</button>
+              <button type="button" class="journey-node" data-journey-node="dialog" aria-label="02 Dialog Interaktif" aria-pressed="false" hidden>02</button>
+              <button type="button" class="journey-node" data-journey-node="cup" aria-label="03 El Muna Fun Cup" aria-pressed="false" hidden>03</button>
+              <button type="button" class="journey-node" data-journey-node="finale" aria-label="04 Puncak Harlah ke-43" aria-pressed="false" hidden>04</button>
+              <span class="journey-pin" data-journey-pin aria-hidden="true" hidden></span>
+              <p data-journey-fallback hidden>Visual 3D tidak tersedia. Status dan jadwal tetap dapat digunakan.</p>
+            </div>
+            <ul class="journey-legend" data-journey-legend hidden aria-label="Legenda peta">
+              <li data-kind="past">Jadwal telah lewat</li>
+              <li data-kind="current">Aktif / hari acara</li>
+              <li data-kind="upcoming">Mendatang</li>
+            </ul>
+            <div class="journey-preview">
+              <div class="journey-mode-line">
+                <label for="journey-date">Jelajahi tanggal</label>
+                <output for="journey-date" aria-live="off" hidden></output>
+              </div>
+              <input type="range" id="journey-date" name="journey_date" min="0" max="33" step="1" value="0" disabled />
+              <div class="journey-endpoints"><span>17 Nov</span><span>20 Des</span></div>
+              <button type="button" data-journey-reset disabled>Kembali ke hari ini</button>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="journey-list-heading">Jadwal rangkaian</h3>
+            <ol class="journey-events">
+              <li><button type="button" data-journey-select="video" aria-pressed="true" disabled>
+                <span class="journey-index" aria-hidden="true">01</span>
+                <span><strong>Kompetisi Kreatif Video</strong><small>17 November–20 Desember 2026</small></span>
+                <span class="journey-badge" hidden></span>
+              </button></li>
+              <li><button type="button" data-journey-select="dialog" aria-pressed="false" disabled>
+                <span class="journey-index" aria-hidden="true">02</span>
+                <span><strong>Dialog Interaktif</strong><small>21 November 2026</small></span>
+                <span class="journey-badge" hidden></span>
+              </button></li>
+              <li><button type="button" data-journey-select="cup" aria-pressed="false" disabled>
+                <span class="journey-index" aria-hidden="true">03</span>
+                <span><strong>El Muna Fun Cup</strong><small>13 Desember 2026</small></span>
+                <span class="journey-badge" hidden></span>
+              </button></li>
+              <li><button type="button" data-journey-select="finale" aria-pressed="false" disabled>
+                <span class="journey-index" aria-hidden="true">04</span>
+                <span><strong>Puncak Harlah ke-43</strong><small>20 Desember 2026</small></span>
+                <span class="journey-badge" hidden></span>
+              </button></li>
+            </ol>
+            <div class="journey-details">
+              <article data-journey-detail="video">
+                <h3>Kompetisi Kreatif Video</h3>
+                <p>Nyala Generasi, Abadi Menginspirasi</p>
+                <p><strong>Pendaftaran gratis</strong></p>
+                <dl>
+                  <div><dt>Pendaftaran</dt><dd>17–29 November 2026</dd></div>
+                  <div><dt>Produksi video</dt><dd>29 November–13 Desember 2026</dd></div>
+                  <div><dt>Batas pengumpulan</dt><dd>13 Desember 2026</dd></div>
+                  <div><dt>Pengumuman pemenang</dt><dd>17 Desember 2026</dd></div>
+                  <div><dt>Awarding</dt><dd>20 Desember 2026</dd></div>
+                </dl>
+                <a href="/proposal.html#video">Baca proposal Kompetisi Kreatif Video</a>
+              </article>
+              <article data-journey-detail="dialog">
+                <h3>Dialog Interaktif</h3>
+                <p>Ya Allah, ini arahnya ke mana, ya?</p>
+                <p><strong>19.00 WIB</strong></p>
+                <a href="/proposal.html#dialog">Baca proposal Dialog Interaktif</a>
+              </article>
+              <article data-journey-detail="cup">
+                <h3>El Muna Fun Cup</h3>
+                <p>Badminton ganda campuran usia 15–30 tahun · Rp30 ribu per tim</p>
+                <p><strong>08.00 WIB</strong></p>
+                <a href="/proposal.html#badminton">Baca proposal El Muna Fun Cup</a>
+              </article>
+              <article data-journey-detail="finale">
+                <h3>Puncak Harlah ke-43</h3>
+                <p>Pengajian umum bersama Gus Salsaladin dan Hadrah El Muna Tulungagung</p>
+                <p><strong>19.00 WIB–selesai</strong></p>
+                <a href="/proposal.html#finale">Baca proposal Puncak Harlah ke-43</a>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="play-section" id="play">
         <div class="wrap play-inner">
-          <div class="hero-world">
-            <div class="edition">SEJAK 1983 <span>↗</span> TERUS MELANGKAH</div>
-            <canvas
-              id="hero-canvas"
-              aria-label="Angka 43 emas interaktif melayang di panggung biru muda"
-            ></canvas>
-            <div class="world-sticker">
-              <span>43 TAHUN</span><b>berbagi<br />kebaikan.</b><span>TERUS BERLANJUT ↗</span>
+          <div class="hero-posters" role="region" aria-roledescription="karusel" aria-label="Poster empat acara">
+            <div class="edition">EMPAT RUANG <span>↗</span> SATU PERJALANAN</div>
+            <div class="poster-stack">
+              <div class="swap-card" data-position="0">
+                <img src="/images/dialog-interaktif-poster.jpg" alt="Poster unggulan Dialog Interaktif" draggable="false" loading="lazy" />
+              </div>
+              <div class="swap-card" data-position="1">
+                <img src="/images/el-muna-fun-cup-poster.jpg" alt="Poster unggulan El Muna Fun Cup" draggable="false" loading="lazy" />
+              </div>
+              <div class="swap-card" data-position="2">
+                <img src="/images/kompetisi-video-kreatif-poster.png" alt="Poster unggulan Kompetisi Kreatif Video" draggable="false" loading="lazy" />
+              </div>
+              <div class="swap-card" data-position="3">
+                <img src="/images/puncak-harlah-poster.jpg" alt="Poster unggulan Puncak Harlah ke-43" draggable="false" loading="lazy" />
+              </div>
             </div>
-            <div class="world-label">
-              <span class="tiny-dot"></span> BABAK BARU SEGERA DIMULAI…
+            <div class="poster-controls">
+              <span id="poster-status" aria-live="polite">01 / Dialog Interaktif</span>
+              <button type="button" id="poster-pause" aria-label="Jeda pergantian poster" aria-pressed="false">Ⅱ</button>
+              <button type="button" id="poster-next" aria-label="Poster berikutnya">↗</button>
             </div>
-            <span class="drag-note"><i data-lucide="move-up-right"></i> geser kursor. rasakan semangatnya.</span>
           </div>
           <div class="play-copy">
             <div class="eyebrow">02 / JANGAN CUMA GULIR. AYO BERGULIR.</div>
@@ -230,8 +355,9 @@
           </h2>
           <div class="celebration-description">
             <p>
-              43 tahun kebaikan telah menjadi bagian dari perjalanan kita.<br />
-              Saatnya meneruskannya dan menguatkan generasi berikutnya.
+              Pengajian umum bersama Gus Salsaladin, Khodimul Majelis Ta’lim
+              Futuhul Qolbi, Trenggalek, diiringi Hadrah El Muna Tulungagung.
+              Gratis dan terbuka untuk umum · Siaran langsung di YouTube El Muna TV.
             </p>
             <button class="text-link" id="calendar-button">
               Simpan tanggalnya <i data-lucide="calendar-plus"></i>
@@ -242,7 +368,7 @@
           <div><span>PUNCAK PERAYAAN</span><strong>20.12.2026</strong></div>
           <div class="date-side">
             <span class="date-flower">✳</span>
-            <p>MINGGU, 20 DESEMBER<br />REMAS AL MUNAWWAR</p>
+            <p>AHAD, 20 DESEMBER · 19.00 WIB–SELESAI<br />MASJID AGUNG AL MUNAWWAR TULUNGAGUNG</p>
           </div>
         </div>
         <div
@@ -251,13 +377,91 @@
           aria-label="Hitung mundur menuju puncak perayaan"
         ></div>
       </section>
+
+      <section class="wrap section landing-info" id="archive" aria-labelledby="archive-title">
+        <div class="section-heading">
+          <div><div class="eyebrow">04 / JEJAK KEGIATAN</div><h2 id="archive-title">Perjalanan.<br /><span>Lintas generasi.</span></h2></div>
+          <p>Dokumentasi Harlah 41 dan 42 dari proposal Sahabat Harlah.</p>
+        </div>
+        <div class="landing-columns">
+          <article>
+            <a href="https://www.instagram.com/reel/DDLvYLsP6oZ/"><img class="archive-photo" src="/images/harlah-41-documentation.png" alt="Kolase dokumentasi Harlah ke-41 tahun 2024 bersama Gus Iqdam" width="2400" height="900" loading="lazy" /></a>
+            <h3>Harlah 41 · 2024</h3>
+            <p>Pengajian Akbar bersama Gus Iqdam, dimeriahkan Hadroh Pusat Sabilu Taubah di Masjid Agung Al Munawwar Tulungagung.</p>
+            <p>“Remas Al-Munawwar Bersinergi, Ciptakan Langkah Tanpa Henti”</p>
+            <a class="text-link" href="https://www.instagram.com/reel/DDLvYLsP6oZ/">Lihat dokumentasi Harlah 41 ↗</a>
+          </article>
+          <article>
+            <a href="https://www.instagram.com/p/DVGw0_2D30o/"><img class="archive-photo" src="/images/harlah-42-documentation.png" alt="Kolase Festival Banjari dan pengajian umum Harlah ke-42 tahun 2025" width="2400" height="900" loading="lazy" /></a>
+            <h3>Harlah 42 · 2025</h3>
+            <p>Festival Banjari kategori umum se-Karesidenan Kediri, dilanjutkan pengajian umum sebagai puncak acara.</p>
+            <p>“Berpadu dalam Shalawat, Menyebar Cinta Rasul di Kalbu Generasi Muda”</p>
+            <a class="text-link" href="https://www.instagram.com/p/DVGw0_2D30o/">Lihat dokumentasi Harlah 42 ↗</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="wrap section landing-info" id="sponsorship" aria-labelledby="sponsorship-title">
+        <div class="section-heading">
+          <div><div class="eyebrow">05 / SAHABAT HARLAH</div><h2 id="sponsorship-title">Ambil peran.<br /><span>Lanjutkan perjalanan.</span></h2></div>
+          <p>Perusahaan, pelaku usaha, lembaga, komunitas, dan perorangan:<br />mari mendukung ruang tumbuh generasi muda dan masyarakat.</p>
+        </div>
+        <dl class="landing-funding">
+          <div><dt>Total rencana anggaran</dt><dd>Rp28.829.000</dd></div>
+          <div><dt>Kas remaja masjid</dt><dd>Rp2.480.000</dd></div>
+          <div><dt>Kekurangan dana</dt><dd>Rp26.349.000</dd></div>
+        </dl>
+        <div class="landing-packages">
+          <article><span class="eyebrow">PREMIUM</span><h3>Tunggal</h3><strong>Rp28.829.000</strong><p>100% RAB · maksimal 1 sponsor. Eksklusivitas melalui perjanjian khusus.</p></article>
+          <article><span class="eyebrow">PREMIUM</span><h3>Utama</h3><strong>Rp15 juta</strong><p>Sekitar 50% RAB · maksimal 2 sponsor. Feed khusus 2 kali dan video apresiasi.</p></article>
+          <article><span class="eyebrow">PREMIUM</span><h3>Mitra</h3><strong>Rp6 juta</strong><p>Sekitar 20% RAB · maksimal 5 sponsor. Feed khusus 1 kali dan IG Collab Post.</p></article>
+          <article><span class="eyebrow">PREMIUM</span><h3>Pendukung</h3><strong>Rp3 juta</strong><p>Sekitar 10% RAB. Story & tag IG 1 kali dan MC puncak 1 kali.</p></article>
+          <article><span class="eyebrow">REGULER</span><h3>Sahabat Harlah</h3><strong>Rp200 ribu–1 juta</strong><p>Pilihan Rp1 juta, Rp500 ribu, Rp300 ribu, atau Rp200 ribu.</p></article>
+          <article><span class="eyebrow">DONASI SUKARELA</span><h3>Donatur</h3><strong>Sukarela</strong><p>Dukungan tanpa paket promosi, terbuka untuk berbagai bentuk bantuan.</p></article>
+          <article><span class="eyebrow">BARANG/JASA</span><h3>Barang &amp; Jasa</h3><strong>Sesuai nilai dukungan</strong><p>Konsumsi, perlengkapan, percetakan, atau jasa kebutuhan acara. Benefit mengikuti nilai yang disepakati.</p></article>
+        </div>
+        <p>Nominal premium mengacu pada total RAB, bukan kekurangan dana. Benefit mengikuti paket dan kesepakatan, bukan jaminan jangkauan audiens. IG Collab Post memakai jatah feed khusus. Benefit hanya berlaku untuk publikasi atau acara yang belum terlaksana sejak kesepakatan.</p>
+        <div class="landing-links">
+          <a class="button blue" href="/proposal.html">Baca proposal lengkap ↗</a>
+          <a class="text-link" href="/proposal.html#appendix-packages">Benefit premium ↗</a>
+          <a class="text-link" href="/proposal.html#appendix-sahabat">Benefit reguler ↗</a>
+          <a class="text-link" href="/proposal.html#appendix-support">Barang &amp; jasa ↗</a>
+          <a class="text-link" href="/proposal.html#appendix-terms">Ketentuan kemitraan ↗</a>
+        </div>
+      </section>
+
+      <section class="wrap section landing-info" id="contact" aria-labelledby="contact-title">
+        <div class="section-heading">
+          <div><div class="eyebrow">06 / KONTAK &amp; KONTRIBUSI</div><h2 id="contact-title">Mari menjadi<br /><span>Sahabat Harlah.</span></h2></div>
+          <p>Pindai QR atau pilih kontak WhatsApp.<br />Sesuaikan nama, asal, dan pilihan dukungan sebelum mengirim.</p>
+        </div>
+        <div class="landing-columns">
+          <div class="landing-contacts">
+            <a href="https://wa.me/6283117737967?text=Assalamualaikum%20wr.%20wb.%0A%0ASaya%20%5Bnama%5D%20dari%20%5Busaha%2Finstansi%5D.%20Saya%20berminat%20mendukung%20Harlah%20ke-43%20melalui%20paket%20%5Bpilihan%20paket%5D%20%2F%20barang%20atau%20jasa%20%5Bbentuk%20dukungan%5D.%0A%0AMohon%20informasi%20kerja%20samanya.%20Terima%20kasih."><img src="/images/sponsorship-iqtifa-whatsapp-qr.png" width="616" height="616" alt="QR WhatsApp Iqtifa dengan format pesan sponsorship" loading="lazy" /><strong>Iqtifa</strong><span>+62 831-1773-7967</span></a>
+            <a href="https://wa.me/6281330293995?text=Assalamualaikum%20wr.%20wb.%0A%0ASaya%20%5Bnama%5D%20dari%20%5Busaha%2Finstansi%5D.%20Saya%20berminat%20mendukung%20Harlah%20ke-43%20melalui%20paket%20%5Bpilihan%20paket%5D%20%2F%20barang%20atau%20jasa%20%5Bbentuk%20dukungan%5D.%0A%0AMohon%20informasi%20kerja%20samanya.%20Terima%20kasih."><img src="/images/sponsorship-zahwa-whatsapp-qr.png" width="616" height="616" alt="QR WhatsApp Zahwa dengan format pesan sponsorship" loading="lazy" /><strong>Zahwa</strong><span>+62 813-3029-3995</span></a>
+          </div>
+          <div>
+            <h3>Rekening kontribusi</h3>
+            <p>BRI · <strong>7358 0101 7580 534</strong><br />Atas nama Nur Mufidah ‘Aida</p>
+            <h3>Kanal resmi</h3>
+            <div class="landing-links">
+              <a href="mailto:remasalmunawwar@gmail.com">remasalmunawwar@gmail.com</a>
+              <a href="https://www.instagram.com/remas_elmuna.ta/">Instagram @remas_elmuna.ta</a>
+              <a href="https://www.tiktok.com/@remaselmuna">TikTok @remaselmuna</a>
+              <span>YouTube El Muna TV</span>
+              <a href="https://43.remaselmuna.web.id">43.remaselmuna.web.id</a>
+            </div>
+          </div>
+        </div>
+        <details class="landing-message"><summary>Format pesan WhatsApp</summary><p>Assalamualaikum wr. wb.<br /><br />Saya [nama] dari [usaha/instansi]. Saya berminat mendukung Harlah ke-43 melalui paket [pilihan paket] / barang atau jasa [bentuk dukungan].<br /><br />Mohon informasi kerja samanya. Terima kasih.</p></details>
+      </section>
     </main>
     <footer class="wrap">
       <a class="brand" href="#"
         ><span class="brand-flower">✳</span
         ><span>ROAD<br />TO <b>43</b></span></a
       >
-      <p>Merawat Warisan, Menguatkan Generasi.</p>
+      <p><a href="/proposal.html#theme">Merawat Warisan, Menguatkan Perjuangan. ↗</a></p>
       <span>© 2026 REMAS AL MUNAWWAR <a href="#">KEMBALI KE ATAS ↑</a></span>
     </footer>
 

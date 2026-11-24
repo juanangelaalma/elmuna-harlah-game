@@ -1,0 +1,149 @@
+.cup-page { background: color-mix(in srgb, var(--sky) 12%, var(--paper)); }
+.cup-skip { position: absolute; inset: 8px auto auto 8px; transform: translateY(-150%); z-index: 5; padding: 12px; background: var(--paper); }
+.cup-skip:focus { transform: none; }
+.cup-tools { max-width: 210mm; margin: 24px auto; padding-inline: 4px; display: grid; grid-template-columns: 1fr auto; gap: 18px; font-size: 13px; }
+.cup-tools nav, .cup-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.cup-tools a { min-height: 44px; display: inline-flex; align-items: center; }
+.cup-tools button { min-height: 44px; padding: 12px 16px; border-radius: 6px; background: var(--ink); color: var(--paper); font-weight: 600; }
+.cup-tools button:disabled { opacity: .55; cursor: wait; }
+#motion-toggle { color: var(--ink); background: var(--paper); border: 1px solid color-mix(in srgb, var(--ink) 20%, transparent); }
+#registration-form, #cup-status { grid-column: 1 / -1; margin: 0; }
+#registration-form label { display: block; font-weight: 700; margin-bottom: 8px; }
+.cup-link-row { display: flex; gap: 10px; }
+.cup-link-row input { min-width: 0; flex: 1; border: 1px solid color-mix(in srgb, var(--ink) 25%, transparent); border-radius: 6px; background: var(--paper); padding: 12px; font: inherit; font-size: 16px; color: var(--ink); }
+#link-help, #cup-status { font-size: 12px; line-height: 1.6; }
+#link-help { margin: 8px 0 0; }
+.cup-page :is(a, button, input):focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; }
+.cup-poster {
+  --cup-deep: color-mix(in srgb, var(--blue) 57%, var(--ink));
+  width: 210mm; height: 297mm; padding: 10mm 13mm 8mm; margin: 0 auto 40px;
+  background: var(--blue); color: var(--paper); box-shadow: 0 20px 70px #14213d30;
+  display: flex; flex-direction: column; position: relative; isolation: isolate; overflow: hidden;
+}
+.cup-poster::before {
+  content: ""; position: absolute; inset: 0; z-index: -2; pointer-events: none;
+  background: linear-gradient(145deg, transparent 38%, var(--cup-deep) 38%, var(--cup-deep) 64%, transparent 64%);
+}
+.cup-poster::after {
+  content: ""; position: absolute; inset: 18% -20% 16%; z-index: -1; pointer-events: none;
+  background: radial-gradient(ellipse at 65% 40%, #a7def338, transparent 56%);
+}
+.cup-poster :is(a, button):focus-visible { outline-color: var(--gold); }
+.cup-watermark { position: absolute; right: -24px; top: 310px; z-index: -1; font: 700 400px/.8 "Space Grotesk", sans-serif; letter-spacing: -40px; color: transparent; -webkit-text-stroke: 1px #ffffff21; transform: rotate(-15deg); pointer-events: none; }
+.cup-masthead { display: flex; align-items: center; justify-content: space-between; padding-bottom: 16px; border-bottom: 1px solid #ffffff40; flex-shrink: 0; }
+.cup-brand { display: inline-flex; align-items: center; gap: 8px; font: 700 12px/.96 "Space Grotesk", sans-serif; }
+.cup-brand > span:first-child { font-size: 43px; color: var(--gold); }
+.cup-brand b { font-size: 18px; }
+.cup-masthead p { margin: 0; font: 500 9px/1.6 "Space Grotesk", sans-serif; text-align: end; letter-spacing: .7px; }
+.cup-headline { padding-top: 26px; position: relative; z-index: 2; }
+.cup-eyebrow { font: 600 10px "Space Grotesk", sans-serif; letter-spacing: 1.6px; margin: 0 0 26px; }
+.cup-eyebrow span { color: var(--gold); margin-right: 7px; }
+.cup-headline h1 { margin: 0 0 0 3px; font-weight: 950; letter-spacing: -5px; line-height: .86; transform: rotate(-7deg); transform-origin: 50% 50%; text-shadow: 0 9px 0 #14213d18, 0 20px 35px #14213d20; }
+.cup-headline h1 > span { display: block; font-size: 75px; padding-inline-start: 4px; }
+.cup-headline strong { display: flex; align-items: center; justify-content: space-between; font-size: 123px; color: var(--paper); letter-spacing: -8px; margin-top: 7px; }
+.cup-headline strong > span { font-size: 58px; color: var(--gold); letter-spacing: 0; transform: rotate(16deg); text-shadow: none; }
+.cup-category { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 24px; }
+.cup-category > span { color: var(--ink); background: var(--gold); padding: 11px 23px; font: 700 12px "Space Grotesk", sans-serif; letter-spacing: 1px; transform: rotate(-7deg); box-shadow: 5px 6px 0 #14213d24; clip-path: polygon(3% 0, 100% 0, 97% 100%, 0 100%); }
+.cup-category em { font: italic 16px "Lora", serif; transform: rotate(-7deg); }
+.cup-art { height: 330px; position: relative; flex-shrink: 0; margin: -9px -12px 0; }
+.cup-art > img, .cup-fallback { position: absolute; width: 127%; height: 115%; max-width: none; left: -13.5%; top: -9%; object-fit: contain; pointer-events: none; filter: drop-shadow(14px 28px 13px #14213d4d); }
+.cup-court { position: absolute; width: 91%; height: 71%; top: 19%; left: 0; border: 1px solid #ffffff40; transform: perspective(600px) rotateX(51deg) rotateZ(-28deg); background: #a7def30a; }
+.cup-court::before, .cup-court::after, .cup-court span { content: ""; position: absolute; border: 1px solid #ffffff29; }
+.cup-court::before { inset: 17% 0; }
+.cup-court::after { inset: 0 12%; }
+.cup-court span:first-child { top: 50%; width: 100%; }
+.cup-court span:last-child { left: 50%; height: 100%; }
+.cup-speed { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.cup-speed span { position: absolute; width: 49%; height: 55px; border-top: 2px solid #ffffff5c; border-radius: 50%; top: 23%; right: 9%; transform: rotate(-34deg); }
+.cup-speed span:nth-child(2) { width: 43%; top: 30%; right: 7%; border-color: #ffbe3566; }
+.cup-speed span:nth-child(3) { width: 36%; top: 34%; right: 5%; border-color: #ffffff26; }
+.cup-art-note { position: absolute; left: 12px; bottom: 30px; font: 600 9px/1.5 "Space Grotesk", sans-serif; letter-spacing: 1.2px; }
+.cup-art-note > span { display: block; font: 400 50px/1 "Space Grotesk", sans-serif; color: var(--gold); }
+.cup-price { position: absolute; right: 15px; bottom: 9px; width: 115px; height: 115px; border-radius: 50%; background: var(--gold); color: var(--ink); display: flex; flex-direction: column; align-items: center; justify-content: center; transform: rotate(12deg); box-shadow: 7px 10px 0 #14213d40, 13px 22px 26px #14213d26; border: 1px solid #ffffff66; }
+.cup-price::before { content: ""; position: absolute; inset: 6px; border: 1px dashed #14213d61; border-radius: 50%; }
+.cup-price > span { font: 700 11px "Space Grotesk", sans-serif; letter-spacing: 2px; }
+.cup-price b { font: 700 47px/1.1 "Space Grotesk", sans-serif; letter-spacing: -3px; }
+.cup-price b span { font-size: 31px; }
+.cup-spark { position: absolute; left: 21px; top: 75px; font-size: 40px; color: var(--gold); transform: rotate(15deg); }
+.cup-spark-small { position: absolute; right: 5px; top: 38px; font-size: 28px; color: var(--paper); }
+.cup-event { display: grid; grid-template-columns: 1.2fr 1fr; gap: 20px; align-items: end; padding-block: 8px 19px; position: relative; }
+.cup-event::after { content: ""; position: absolute; bottom: 0; inset-inline: 0; height: 1px; background: #ffffff40; transform: rotate(-3deg); }
+.cup-date > span, .cup-location > span, .cup-prizes > div:last-child > span { font: 600 9px "Space Grotesk", sans-serif; letter-spacing: 1.5px; }
+.cup-date > span { display: inline-block; padding: 5px 10px; border: 1px solid #ffffff73; transform: rotate(-5deg); }
+.cup-date p { font: 800 31px/1.04 "DM Sans", sans-serif; margin: 9px 0 0; letter-spacing: -1.4px; }
+.cup-date b { display: flex; align-items: center; gap: 22px; font: 700 46px/1.1 "Space Grotesk", sans-serif; color: var(--paper); letter-spacing: -2px; }
+.cup-date b span { font-size: 42px; }
+.cup-location { text-align: end; padding-bottom: 8px; }
+.cup-location p { font: 700 25px "Space Grotesk", sans-serif; letter-spacing: -1px; margin: 8px 0 12px; }
+.cup-age { display: inline-block; font: 700 11px "Space Grotesk", sans-serif; padding: 8px 12px; color: var(--ink); background: var(--sky); transform: rotate(-3deg); box-shadow: 4px 5px 0 #14213d26; }
+.cup-prizes { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding-block: 23px 20px; }
+.cup-prizes h2 { font: 700 24px/1.15 "Space Grotesk", sans-serif; letter-spacing: -1px; margin: 0; }
+.cup-prizes h2 em { font: italic 26px/1.3 "Lora", serif; color: var(--paper); }
+.cup-prizes > div:last-child { text-align: end; }
+.cup-prizes p { font-size: 18px; line-height: 1.35; font-weight: 600; margin: 5px 0 0; }
+.cup-register { margin-top: auto; }
+.cup-register :is(a, #registration-placeholder) { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 22px; background: var(--paper); color: var(--ink); border-radius: 4px; font: 700 13px "Space Grotesk", sans-serif; letter-spacing: .8px; box-shadow: 6px 7px 0 #14213d33; }
+.cup-register b { font-size: 25px; line-height: .8; }
+#registration-address { margin: 11px 8px 0; text-align: center; overflow-wrap: anywhere; font-size: 11px; line-height: 1.35; }
+.cup-footer { min-height: 0; padding: 0; border: 0; flex-wrap: nowrap; margin-top: 20px; display: flex; justify-content: space-between; align-items: center; gap: 16px; font: 500 7px "Space Grotesk", sans-serif; letter-spacing: .6px; }
+.cup-footer > span { flex-basis: auto; flex-direction: row; text-align: start; }
+.cup-footer > span:last-child { display: flex; align-items: center; gap: 10px; }
+.cup-footer b { font-size: 21px; color: var(--paper); }
+.cup-noscript { max-width: 210mm; margin: 20px auto; padding: 16px; }
+@keyframes cup-float { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-7px) rotate(.7deg); } }
+@media (prefers-reduced-motion: no-preference) { .cup-page:not(.motion-paused) #cup-sculpture { animation: cup-float 7s ease-in-out infinite; } .cup-tools button:active { transform: scale(.96); } }
+@media screen and (max-width: 840px) {
+  .cup-tools { margin: 16px 5%; }
+  .cup-poster { width: 90%; height: auto; min-height: 0; padding: 5%; }
+  .cup-headline h1 > span { font-size: clamp(36px, 9vw, 75px); }
+  .cup-headline strong { font-size: clamp(58px, 14.5vw, 123px); letter-spacing: -.065em; }
+  .cup-headline h1 { letter-spacing: -.055em; }
+  .cup-headline strong > span { font-size: .45em; }
+  .cup-category em { font-size: clamp(11px, 2vw, 16px); }
+  .cup-art { height: clamp(240px, 44vw, 350px); }
+  .cup-watermark { font-size: 48vw; top: 34%; letter-spacing: -.1em; }
+  .cup-register { margin-top: 8px; }
+}
+@media screen and (max-width: 540px) {
+  .cup-tools { grid-template-columns: 1fr; gap: 12px; }
+  .cup-actions { justify-content: space-between; }
+  .cup-link-row { flex-direction: column; }
+  .cup-masthead { padding-bottom: 15px; }
+  .cup-masthead p { font-size: 6px; letter-spacing: .3px; }
+  .cup-brand { font-size: 10px; }
+  .cup-brand > span:first-child { font-size: 34px; }
+  .cup-headline { padding-top: 20px; }
+  .cup-category { flex-wrap: wrap; gap: 14px; margin-top: 23px; }
+  .cup-category > span { font-size: 9px; padding: 9px 15px; }
+  .cup-category em { font-size: 12px; margin-inline-start: auto; }
+  .cup-eyebrow { font-size: 8px; letter-spacing: 1px; margin-bottom: 24px; }
+  .cup-art { margin-top: -5px; }
+  .cup-art > img, .cup-fallback { top: -4%; height: 104%; }
+  .cup-price { width: 80px; height: 80px; right: 10px; bottom: 4px; box-shadow: 4px 6px 0 #14213d40; }
+  .cup-price b { font-size: 33px; }
+  .cup-price b span { font-size: 23px; }
+  .cup-price > span { font-size: 8px; }
+  .cup-spark { font-size: 25px; left: 15px; top: 52px; }
+  .cup-spark-small { font-size: 20px; right: 8px; }
+  .cup-art-note { font-size: 7px; bottom: 10px; }
+  .cup-art-note > span { font-size: 32px; }
+  .cup-event { grid-template-columns: 1fr; gap: 16px; padding-top: 18px; }
+  .cup-date p { font-size: 28px; }
+  .cup-date b { font-size: 38px; }
+  .cup-location { text-align: end; padding-bottom: 0; }
+  .cup-location p { font-size: 23px; margin-bottom: 8px; }
+  .cup-prizes { align-items: start; gap: 20px; padding-block: 23px; }
+  .cup-prizes h2 { font-size: 16px; letter-spacing: -.5px; }
+  .cup-prizes h2 em { font-size: 18px; }
+  .cup-prizes p { font-size: 13px; }
+  .cup-prizes > div:last-child > span { font-size: 8px; }
+  .cup-register :is(a, #registration-placeholder) { font-size: 10px; padding: 14px; letter-spacing: .2px; }
+  .cup-footer { font-size: 6px; flex-wrap: wrap; gap: 10px; line-height: 1.5; }
+}
+@page { size: A4 portrait; margin: 0; }
+@media print {
+  html, .cup-page { margin: 0; padding: 0; background: var(--blue); }
+  .cup-tools, .cup-skip, .cup-noscript { display: none; }
+  .cup-poster { margin: 0; box-shadow: none; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  #cup-sculpture { animation: none !important; transform: none !important; }
+}

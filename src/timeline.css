@@ -1,0 +1,70 @@
+.skip-link { position: absolute; inset-block-start: 10px; inset-inline-start: 10px; padding: 12px 18px; background: var(--ink); color: var(--paper); z-index: 10; transform: translateY(-150%); }
+.skip-link:focus { transform: none; }
+.timeline-page :is(a, button):focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
+.timeline-intro { display: flex; justify-content: space-between; align-items: end; gap: 32px; padding-block: 65px 48px; }
+.timeline-intro h1 { font-size: clamp(40px, 4.8vw, 68px); letter-spacing: -3px; line-height: 1.09; margin: 23px 0 0; font-weight: 850; }
+.timeline-intro h1 em { font-family: "Lora", serif; font-style: italic; color: var(--blue); font-weight: 400; }
+.timeline-intro-note { padding-bottom: 4px; }
+.timeline-intro-note p { color: #5b625f; font-size: 13px; line-height: 1.8; margin-bottom: 0; }
+.timeline-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 7%; align-items: start; padding-bottom: 64px; }
+.journey { position: sticky; top: 24px; background: #edf5fc; border-radius: 8px; padding: 24px; overflow: hidden; }
+.journey-top { display: flex; justify-content: space-between; gap: 12px; align-items: center; }
+.journey-top > span:last-child { font-size: 27px; }
+.journey-scene { height: 375px; position: relative; }
+#timeline-canvas { width: 100%; height: 100%; display: block; }
+.journey-stamp { position: absolute; bottom: 18px; left: 0; font-family: "Space Grotesk", sans-serif; font-size: 10px; line-height: 1.3; letter-spacing: 1px; pointer-events: none; }
+.journey-stamp b { color: var(--blue); }
+.journey-bottom { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-block: 12px 20px; border-bottom: 1px solid #c4d5e5; }
+.journey-bottom p { font-size: 12px; line-height: 1.5; margin: 0; }
+.journey-counter { white-space: nowrap; font: 12px "Space Grotesk", sans-serif; }
+.journey-stops { display: flex; gap: 8px; align-items: center; padding-top: 18px; flex-wrap: wrap; }
+.journey-stops button { width: 44px; height: 44px; border: 1px solid #bdcedf; border-radius: 50%; background: transparent; font: 12px "Space Grotesk", sans-serif; }
+.journey-stops button[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+.journey-stops > span { flex: 1 1 120px; font-size: 10px; line-height: 1.5; padding-inline-start: 6px; }
+.timeline-list-heading { display: flex; justify-content: space-between; align-items: center; min-height: 54px; border-bottom: 1px solid #d9dfdf; }
+.timeline-list { list-style: none; padding: 0; margin: 0; }
+.timeline-item { position: relative; display: grid; grid-template-columns: 32px 1fr; gap: 22px; padding-block: 32px; scroll-margin-top: 24px; }
+.timeline-item:not(:last-child)::after { content: ""; position: absolute; top: 63px; bottom: -31px; left: 15px; width: 1px; background: #d3dce5; }
+.timeline-number { width: 32px; height: 32px; border-radius: 50%; background: #edf5fc; display: grid; place-items: center; font: 11px "Space Grotesk", sans-serif; position: relative; z-index: 1; }
+.timeline-item article { min-width: 0; padding-top: 7px; }
+.timeline-date { font: 600 11px/1.6 "Space Grotesk", sans-serif; letter-spacing: .7px; margin: 0 0 24px; }
+.timeline-category { font: 500 9px "Space Grotesk", sans-serif; letter-spacing: 1.3px; color: #586672; }
+.timeline-item h2 { font-size: clamp(23px, 2.1vw, 30px); line-height: 1.2; letter-spacing: -1px; margin: 10px 0 12px; }
+.timeline-item article > p:not(.timeline-date) { font-size: 13px; line-height: 1.8; color: #555f68; margin: 0; max-width: 350px; }
+.timeline-item article > p.timeline-quote { font-family: "Lora", serif; font-size: 20px; font-style: italic; line-height: 1.6; color: var(--ink); }
+.planning-label { display: inline-flex; align-items: center; gap: 6px; background: #fff3d5; border-radius: 4px; color: #695019; font-size: 10px; padding: 7px 9px; margin-top: 16px; }
+.timeline-finale article { background: var(--blue); color: var(--paper); border-radius: 6px; padding: 25px; }
+.timeline-finale .timeline-number { background: var(--gold); }
+.timeline-finale .timeline-category { color: white; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.timeline-finale .timeline-category > span { font-size: 31px; color: var(--gold); line-height: .5; }
+.timeline-finale article > p:not(.timeline-date) { color: white; }
+.finale-note { display: block; border-top: 1px solid #ffffff55; margin-top: 24px; padding-top: 16px; font-size: 10px; line-height: 1.6; }
+.timeline-signoff { border-top: 1px solid #d9dfdf; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; padding-block: 26px 56px; font: 10px "Space Grotesk", sans-serif; letter-spacing: .7px; }
+.timeline-signoff a { display: inline-flex; align-items: center; gap: 16px; min-height: 44px; font: 13px "DM Sans", sans-serif; letter-spacing: 0; }
+@media (max-width: 1050px) {
+  .timeline-layout { gap: 4%; }
+  .journey { padding: 18px; }
+  .journey-scene { height: 320px; }
+  .timeline-intro-note br { display: none; }
+  .timeline-intro-note { max-width: 250px; }
+  .timeline-page .header nav { gap: 20px; }
+}
+@media (max-width: 760px) {
+  .timeline-page .header { flex-wrap: wrap; height: auto; min-height: 100px; padding-block: 18px 10px; gap: 18px; }
+  .timeline-page .header nav { order: 3; flex-basis: 100%; justify-content: space-between; gap: 12px; }
+  .timeline-page .header nav a:first-child { display: flex; }
+  .timeline-page .header nav a { min-height: 44px; }
+  .timeline-page .header nav .active::after { bottom: 2px; }
+  .timeline-page .nav-cta { display: flex; min-height: 44px; }
+  .timeline-intro { display: block; padding-block: 40px 30px; }
+  .timeline-intro h1 { font-size: clamp(35px, 7.7vw, 55px); letter-spacing: -2px; }
+  .timeline-intro-note { max-width: none; margin-top: 28px; }
+  .timeline-layout { grid-template-columns: 1fr; gap: 30px; padding-bottom: 30px; }
+  .journey { position: relative; top: auto; }
+  .journey-scene { height: 290px; }
+  .timeline-item { gap: 16px; padding-block: 28px; }
+  .timeline-item:not(:last-child)::after { bottom: -27px; }
+  .timeline-finale article { padding: 20px; }
+  .timeline-date { font-size: 10px; letter-spacing: .4px; }
+}
+.journey:has(canvas[hidden]) .journey-scene { height: 90px; }
